@@ -1,0 +1,20 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(start \"\" \"c:\\Users\\msidh\\Documents\\Projects\\Manraj AI Projects\\oddonos gelato website\\index.html\")",
+      "Bash(dir:*)",
+      "Bash(findstr:*)",
+      "Bash(update-social-links.bat)",
+      "Bash(cmd /c \"cd /d \"\"c:\\Users\\msidh\\Documents\\Projects\\Manraj AI Projects\\oddonos gelato website\"\" && update-social-links.bat\")",
+      "Bash(del touch.txt update-social-links.bat 2)",
+      "Bash(nul)",
+      "Bash(cmd /c \"cd /d \"\"c:\\Users\\msidh\\Documents\\Projects\\Manraj AI Projects\\oddonos gelato website\"\" && del touch.txt update-social-links.bat 2>nul && echo Files cleaned\")",
+      "Bash(cmd /c \"cd /d \"\"c:\\Users\\msidh\\Documents\\Projects\\Manraj AI Projects\\oddonos gelato website\"\" && mkdir production 2>nul && copy *.html production\\ && copy *.css production\\ && copy *.js production\\ && copy favicon.svg production\\ 2>nul && echo Production folder created!\")",
+      "Bash(git init:*)",
+      "Bash(git add:*)",
+      "Bash(del nul 2)"
+    ],
+    "deny": [],
+    "ask": []
+  }
+}
