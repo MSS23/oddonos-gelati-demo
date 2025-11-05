@@ -1,0 +1,23 @@
+{
+  "name": "oddonos-gelato-website",
+  "version": "1.0.0",
+  "description": "A modern, responsive website for Oddono's Gelati Italiani - London's premier Italian gelato brand since 2004.",
+  "main": "backend-example.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/MSS23/oddonos-gelati-demo.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/MSS23/oddonos-gelati-demo/issues"
+  },
+  "homepage": "https://github.com/MSS23/oddonos-gelati-demo#readme",
+  "dependencies": {
+    "@vercel/analytics": "^1.5.0"
+  }
+}
