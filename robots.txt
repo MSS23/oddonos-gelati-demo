@@ -1,0 +1,25 @@
+# Oddono's Gelato - Robots.txt
+# Allow all search engines to crawl all content
+
+User-agent: *
+Allow: /
+
+# Disallow any admin or private folders (add if applicable)
+# Disallow: /admin/
+# Disallow: /private/
+
+# Sitemap location
+Sitemap: https://www.oddonos.com/sitemap.xml
+
+# Crawl-delay (optional, helps prevent server overload)
+# Crawl-delay: 1
+
+# Popular search engine specific directives
+User-agent: Googlebot
+Allow: /
+
+User-agent: Bingbot
+Allow: /
+
+User-agent: Slurp
+Allow: /

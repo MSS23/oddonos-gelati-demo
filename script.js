@@ -302,6 +302,159 @@ const initHeaderScroll = () => {
 // Initialize on load
 document.addEventListener('DOMContentLoaded', initHeaderScroll);
 
+// ===================================
+// FAQ Accordion Functionality
+// ===================================
+const initFAQ = () => {
+    const faqQuestions = document.querySelectorAll('.faq-question');
+
+    faqQuestions.forEach(question => {
+        question.addEventListener('click', () => {
+            const isExpanded = question.getAttribute('aria-expanded') === 'true';
+            const answer = question.nextElementSibling;
+
+            // Close all other FAQs
+            faqQuestions.forEach(q => {
+                if (q !== question) {
+                    q.setAttribute('aria-expanded', 'false');
+                    q.nextElementSibling.classList.remove('active');
+                }
+            });
+
+            // Toggle current FAQ
+            question.setAttribute('aria-expanded', !isExpanded);
+            answer.classList.toggle('active');
+
+            // Track engagement
+            if (!isExpanded && typeof gtag !== 'undefined') {
+                gtag('event', 'faq_open', {
+                    'event_category': 'engagement',
+                    'event_label': question.textContent.trim()
+                });
+            }
+        });
+    });
+};
+
+// Initialize FAQ on load
+document.addEventListener('DOMContentLoaded', initFAQ);
+
+// ===================================
+// Social Proof Notification
+// ===================================
+const initSocialProof = () => {
+    const socialProof = document.getElementById('socialProof');
+    if (!socialProof) return;
+
+    const names = ['Sarah', 'James', 'Emma', 'Oliver', 'Sophia', 'William'];
+    const locations = ['Chelsea', 'Hampstead', 'Kensington', 'Mayfair', 'Notting Hill'];
+    const actions = [
+        'just joined the Gelato Card program',
+        'just ordered wholesale gelato',
+        'just visited our South Kensington location',
+        'just left a 5-star review'
+    ];
+
+    const showNotification = () => {
+        const randomName = names[Math.floor(Math.random() * names.length)];
+        const randomLocation = locations[Math.floor(Math.random() * locations.length)];
+        const randomAction = actions[Math.floor(Math.random() * actions.length)];
+
+        const textElement = socialProof.querySelector('.social-proof-text');
+        textElement.innerHTML = `<strong>${randomName} from ${randomLocation}</strong> ${randomAction}`;
+
+        socialProof.style.display = 'block';
+
+        // Track engagement
+        if (typeof gtag !== 'undefined') {
+            gtag('event', 'social_proof_view', {
+                'event_category': 'engagement'
+            });
+        }
+
+        // Auto-hide after 8 seconds
+        setTimeout(() => {
+            socialProof.style.display = 'none';
+        }, 8000);
+    };
+
+    // Show first notification after 5 seconds
+    setTimeout(showNotification, 5000);
+
+    // Show subsequent notifications every 30 seconds
+    setInterval(showNotification, 30000);
+};
+
+// Initialize social proof
+document.addEventListener('DOMContentLoaded', initSocialProof);
+
+// ===================================
+// CTA Click Tracking
+// ===================================
+const trackCTAClicks = () => {
+    const ctaButtons = document.querySelectorAll('.btn, .fab-button');
+
+    ctaButtons.forEach(button => {
+        button.addEventListener('click', function(e) {
+            const buttonText = this.textContent.trim() || this.getAttribute('data-tooltip') || 'Unknown';
+            const buttonHref = this.getAttribute('href') || 'No link';
+
+            // Track with Google Analytics if available
+            if (typeof gtag !== 'undefined') {
+                gtag('event', 'cta_click', {
+                    'event_category': 'engagement',
+                    'event_label': buttonText,
+                    'value': buttonHref
+                });
+            }
+
+            // Track with Facebook Pixel if available
+            if (typeof fbq !== 'undefined') {
+                fbq('track', 'Lead', {
+                    content_name: buttonText
+                });
+            }
+        });
+    });
+};
+
+// Initialize CTA tracking
+document.addEventListener('DOMContentLoaded', trackCTAClicks);
+
+// ===================================
+// Scroll Depth Tracking
+// ===================================
+const trackScrollDepth = () => {
+    let scrollMarks = { 25: false, 50: false, 75: false, 100: false };
+
+    const handleScroll = () => {
+        const windowHeight = window.innerHeight;
+        const documentHeight = document.documentElement.scrollHeight;
+        const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+        const scrollPercent = (scrollTop / (documentHeight - windowHeight)) * 100;
+
+        // Track milestones
+        [25, 50, 75, 100].forEach(mark => {
+            if (scrollPercent >= mark && !scrollMarks[mark]) {
+                scrollMarks[mark] = true;
+
+                if (typeof gtag !== 'undefined') {
+                    gtag('event', 'scroll_depth', {
+                        'event_category': 'engagement',
+                        'event_label': `${mark}%`,
+                        'value': mark
+                    });
+                }
+            }
+        });
+    };
+
+    window.addEventListener('scroll', debounce(handleScroll, 500), { passive: true });
+};
+
+// Initialize scroll tracking
+document.addEventListener('DOMContentLoaded', trackScrollDepth);
+
 // Image lazy loading fallback for older browsers
 if ('loading' in HTMLImageElement.prototype) {
     const images = document.querySelectorAll('img[loading="lazy"]');

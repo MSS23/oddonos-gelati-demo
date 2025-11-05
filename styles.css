@@ -894,3 +894,317 @@ p {
 .bg-beige {
     background: var(--warm-beige);
 }
+
+/* ===================================
+   FAQ Section Styles
+   =================================== */
+.faq-section {
+    background: var(--light-cream);
+}
+
+.faq-container {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.faq-item {
+    background: var(--white);
+    border-radius: 12px;
+    margin-bottom: 1rem;
+    overflow: hidden;
+    box-shadow: var(--shadow-sm);
+    transition: var(--transition);
+}
+
+.faq-item:hover {
+    box-shadow: var(--shadow-md);
+}
+
+.faq-question {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1.5rem;
+    background: transparent;
+    border: none;
+    text-align: left;
+    font-family: var(--font-primary);
+    font-size: 1.125rem;
+    font-weight: 600;
+    color: var(--text-dark);
+    cursor: pointer;
+    transition: var(--transition);
+}
+
+.faq-question:hover {
+    color: var(--primary-blue);
+}
+
+.faq-icon {
+    font-size: 1.5rem;
+    font-weight: 300;
+    color: var(--primary-blue);
+    transition: transform 0.3s ease;
+    flex-shrink: 0;
+    margin-left: 1rem;
+}
+
+.faq-question[aria-expanded="true"] .faq-icon {
+    transform: rotate(45deg);
+}
+
+.faq-answer {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease, padding 0.3s ease;
+}
+
+.faq-answer.active {
+    max-height: 500px;
+    padding: 0 1.5rem 1.5rem;
+}
+
+.faq-answer p {
+    margin: 0;
+    line-height: 1.7;
+}
+
+.faq-answer a {
+    color: var(--primary-blue);
+    text-decoration: underline;
+}
+
+.faq-answer a:hover {
+    color: var(--accent-gold);
+}
+
+/* ===================================
+   Floating Action Buttons (FAB)
+   =================================== */
+.fab-container {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    z-index: 999;
+}
+
+.fab-button {
+    width: 56px;
+    height: 56px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: var(--primary-blue);
+    color: var(--white);
+    box-shadow: 0 4px 12px rgba(0, 82, 163, 0.4);
+    cursor: pointer;
+    border: none;
+    transition: var(--transition);
+    text-decoration: none;
+}
+
+.fab-button:hover {
+    background: #003d7a;
+    transform: translateY(-3px);
+    box-shadow: 0 6px 16px rgba(0, 82, 163, 0.5);
+}
+
+.fab-button svg {
+    width: 24px;
+    height: 24px;
+    fill: currentColor;
+}
+
+.fab-button.whatsapp {
+    background: #25D366;
+}
+
+.fab-button.whatsapp:hover {
+    background: #1fb855;
+}
+
+.fab-button.phone {
+    background: var(--accent-gold);
+}
+
+.fab-button.phone:hover {
+    background: #b8922e;
+}
+
+/* Tooltip for FAB */
+.fab-button::before {
+    content: attr(data-tooltip);
+    position: absolute;
+    right: 70px;
+    background: var(--dark-navy);
+    color: var(--white);
+    padding: 0.5rem 1rem;
+    border-radius: 8px;
+    white-space: nowrap;
+    opacity: 0;
+    visibility: hidden;
+    transition: var(--transition);
+    font-size: 0.875rem;
+    font-family: var(--font-secondary);
+}
+
+.fab-button:hover::before {
+    opacity: 1;
+    visibility: visible;
+}
+
+/* ===================================
+   Engagement Elements
+   =================================== */
+.hero-cta-group {
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-top: 2rem;
+}
+
+.btn-secondary {
+    background: transparent;
+    border: 2px solid var(--white);
+    color: var(--white);
+}
+
+.btn-secondary:hover {
+    background: var(--white);
+    color: var(--primary-blue);
+}
+
+/* Social Proof Badge */
+.social-proof {
+    position: fixed;
+    bottom: 30px;
+    left: 30px;
+    background: var(--white);
+    padding: 1rem 1.25rem;
+    border-radius: 12px;
+    box-shadow: var(--shadow-lg);
+    max-width: 300px;
+    z-index: 998;
+    animation: slideInLeft 0.5s ease;
+}
+
+@keyframes slideInLeft {
+    from {
+        transform: translateX(-100%);
+        opacity: 0;
+    }
+    to {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+.social-proof-content {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+}
+
+.social-proof-icon {
+    font-size: 1.5rem;
+}
+
+.social-proof-text {
+    font-size: 0.875rem;
+    line-height: 1.4;
+}
+
+.social-proof-text strong {
+    color: var(--primary-blue);
+    display: block;
+}
+
+.social-proof-close {
+    position: absolute;
+    top: 8px;
+    right: 8px;
+    background: none;
+    border: none;
+    font-size: 1.25rem;
+    cursor: pointer;
+    color: var(--text-light);
+    padding: 0.25rem;
+    line-height: 1;
+}
+
+.social-proof-close:hover {
+    color: var(--text-dark);
+}
+
+/* Trust Badges */
+.trust-badges {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 2rem;
+    flex-wrap: wrap;
+    padding: 2rem 0;
+    margin-top: 2rem;
+}
+
+.trust-badge {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.75rem 1.5rem;
+    background: var(--white);
+    border-radius: 50px;
+    box-shadow: var(--shadow-sm);
+    font-size: 0.95rem;
+    font-weight: 600;
+    color: var(--text-dark);
+}
+
+.trust-badge-icon {
+    font-size: 1.25rem;
+}
+
+/* Mobile Responsive */
+@media (max-width: 768px) {
+    .fab-container {
+        bottom: 20px;
+        right: 20px;
+    }
+
+    .fab-button {
+        width: 48px;
+        height: 48px;
+    }
+
+    .fab-button svg {
+        width: 20px;
+        height: 20px;
+    }
+
+    .fab-button::before {
+        display: none;
+    }
+
+    .social-proof {
+        bottom: 20px;
+        left: 20px;
+        max-width: 250px;
+        font-size: 0.8rem;
+    }
+
+    .hero-cta-group {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .hero-cta-group .btn {
+        width: 100%;
+        text-align: center;
+    }
+}

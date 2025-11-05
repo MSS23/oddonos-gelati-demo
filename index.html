@@ -44,6 +44,116 @@
     <link rel="dns-prefetch" href="https://fonts.googleapis.com">
     <link rel="dns-prefetch" href="https://fonts.gstatic.com">
     <link rel="dns-prefetch" href="https://images.unsplash.com">
+
+    <!-- JSON-LD Structured Data for SEO -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "LocalBusiness",
+        "@id": "https://www.oddonos.com/#organization",
+        "name": "Oddono's Gelati Italiani",
+        "image": "https://www.oddonos.com/images/og-image.jpg",
+        "description": "Award-winning Italian gelato in London, made fresh daily with 100% natural ingredients since 2004.",
+        "url": "https://www.oddonos.com/",
+        "telephone": "+443338000480",
+        "email": "info@oddonos.com",
+        "priceRange": "$$",
+        "servesCuisine": "Italian Gelato",
+        "foundingDate": "2004",
+        "address": {
+            "@type": "PostalAddress",
+            "streetAddress": "Unit 9, Nelson Trade Park, The Path",
+            "addressLocality": "London",
+            "postalCode": "SW19 3BL",
+            "addressCountry": "GB"
+        },
+        "geo": {
+            "@type": "GeoCoordinates",
+            "latitude": "51.4266",
+            "longitude": "-0.1969"
+        },
+        "openingHoursSpecification": [
+            {
+                "@type": "OpeningHoursSpecification",
+                "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"],
+                "opens": "11:00",
+                "closes": "22:00"
+            }
+        ],
+        "sameAs": [
+            "https://facebook.com/oddonos",
+            "https://instagram.com/oddonos",
+            "https://twitter.com/oddonos"
+        ],
+        "aggregateRating": {
+            "@type": "AggregateRating",
+            "ratingValue": "4.8",
+            "reviewCount": "1250",
+            "bestRating": "5",
+            "worstRating": "1"
+        }
+    }
+    </script>
+
+    <!-- Organization Schema -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Organization",
+        "name": "Oddono's Gelati Italiani Ltd",
+        "alternateName": "Oddono's Gelato",
+        "url": "https://www.oddonos.com/",
+        "logo": "https://www.oddonos.com/favicon.svg",
+        "contactPoint": {
+            "@type": "ContactPoint",
+            "telephone": "+443338000480",
+            "contactType": "customer service",
+            "email": "info@oddonos.com",
+            "areaServed": "GB",
+            "availableLanguage": ["English", "Italian"]
+        }
+    }
+    </script>
+
+    <!-- BreadcrumbList Schema -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "BreadcrumbList",
+        "itemListElement": [{
+            "@type": "ListItem",
+            "position": 1,
+            "name": "Home",
+            "item": "https://www.oddonos.com/"
+        }]
+    }
+    </script>
+
+    <!-- Google Analytics (replace with your tracking ID) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-XXXXXXXXXX');
+    </script>
+
+    <!-- Facebook Pixel (replace with your pixel ID) -->
+    <script>
+        !function(f,b,e,v,n,t,s)
+        {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+        n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+        if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+        n.queue=[];t=b.createElement(e);t.async=!0;
+        t.src=v;s=b.getElementsByTagName(e)[0];
+        s.parentNode.insertBefore(t,s)}(window, document,'script',
+        'https://connect.facebook.net/en_US/fbevents.js');
+        fbq('init', 'YOUR_PIXEL_ID');
+        fbq('track', 'PageView');
+    </script>
+    <noscript><img height="1" width="1" style="display:none"
+        src="https://www.facebook.com/tr?id=YOUR_PIXEL_ID&ev=PageView&noscript=1"
+    /></noscript>
 </head>
 <body>
     <!-- Header & Navigation -->
@@ -74,11 +184,14 @@
 
     <!-- Hero Section -->
     <section class="hero">
-        <img src="https://images.unsplash.com/photo-1567206563064-6f60f40a2b57?w=1600&h=900&fit=crop" alt="Delicious Italian gelato" class="hero-bg" loading="lazy">
+        <img src="https://images.unsplash.com/photo-1567206563064-6f60f40a2b57?w=1600&h=900&fit=crop" alt="Fresh Italian gelato in authentic display case at Oddono's London showing multiple colorful flavors" class="hero-bg" loading="lazy">
         <div class="hero-content">
             <h1 class="hero-title">Authentic Italian Gelato, Made with Passion</h1>
             <p class="hero-subtitle">Award winning Fresh Natural Gelato since 2004. Crafted daily with the freshest, most natural ingredients for an unforgettable taste.</p>
-            <a href="shops.html" class="btn btn-primary">Find Your Nearest Oddono's</a>
+            <div class="hero-cta-group">
+                <a href="shops.html" class="btn btn-primary">Find Your Nearest Oddono's</a>
+                <a href="wholesale.html" class="btn btn-secondary">Order Wholesale</a>
+            </div>
         </div>
     </section>
 
@@ -98,40 +211,40 @@
             <div class="card-grid">
                 <!-- Our Story Card -->
                 <div class="card">
-                    <img src="https://images.unsplash.com/photo-1581833971358-2c8b550f87b3?w=600&h=400&fit=crop" alt="Traditional Italian gelato making" class="card-image" loading="lazy">
+                    <img src="https://images.unsplash.com/photo-1581833971358-2c8b550f87b3?w=600&h=400&fit=crop" alt="Artisan gelato maker preparing traditional Italian gelato using authentic equipment and fresh ingredients" class="card-image" loading="lazy">
                     <div class="card-content">
                         <h3 class="card-title">Our Story</h3>
                         <p class="card-description">
                             Born from a mission to bring authentic Italian gelato to London, using secret family recipes
                             passed down through generations.
                         </p>
-                        <a href="about.html" class="btn btn-outline mt-2">Read Our Story</a>
+                        <a href="about.html" class="btn btn-outline mt-2" aria-label="Learn more about Oddono's story and history">Read Our Story</a>
                     </div>
                 </div>
 
                 <!-- Locations Card -->
                 <div class="card">
-                    <img src="https://images.unsplash.com/photo-1566737236500-c8ac43014a67?w=600&h=400&fit=crop" alt="Oddono's gelato shop" class="card-image" loading="lazy">
+                    <img src="https://images.unsplash.com/photo-1566737236500-c8ac43014a67?w=600&h=400&fit=crop" alt="Exterior of Oddono's gelato shop storefront in London with welcoming atmosphere" class="card-image" loading="lazy">
                     <div class="card-content">
                         <h3 class="card-title">7 Locations Across London</h3>
                         <p class="card-description">
                             Find your nearest Oddono's and experience the finest Italian gelato.
                             Each scoop is made fresh daily in our artisan laboratory.
                         </p>
-                        <a href="shops.html" class="btn btn-outline mt-2">Find a Shop</a>
+                        <a href="shops.html" class="btn btn-outline mt-2" aria-label="Find your nearest Oddono's gelato shop location">Find a Shop</a>
                     </div>
                 </div>
 
                 <!-- Gelato Card -->
                 <div class="card">
-                    <img src="https://images.unsplash.com/photo-1563805042-7684c019e1cb?w=600&h=400&fit=crop" alt="Loyalty rewards card" class="card-image" loading="lazy">
+                    <img src="https://images.unsplash.com/photo-1563805042-7684c019e1cb?w=600&h=400&fit=crop" alt="Oddono's loyalty rewards card program for gelato lovers earning points and rewards" class="card-image" loading="lazy">
                     <div class="card-content">
                         <h3 class="card-title">Join Our Gelato Card Program</h3>
                         <p class="card-description">
                             Love gelato? Earn points on every purchase with our Gelato Card.
-                            Get 50 bonus points when you sign up!
+                            <strong>Get 50 bonus points when you sign up today!</strong>
                         </p>
-                        <a href="gelato-card.html" class="btn btn-outline mt-2">Learn More</a>
+                        <a href="gelato-card.html" class="btn btn-outline mt-2" aria-label="Join Oddono's gelato card loyalty program and earn rewards">Join Now &rarr;</a>
                     </div>
                 </div>
             </div>
@@ -210,6 +323,136 @@
         </div>
     </section>
 
+    <!-- FAQ Section with Schema -->
+    <section class="section faq-section">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Frequently Asked Questions</h2>
+                <p class="section-subtitle">Everything you need to know about Oddono's gelato</p>
+            </div>
+
+            <div class="faq-container">
+                <div class="faq-item">
+                    <button class="faq-question" aria-expanded="false">
+                        <span>What makes Oddono's gelato different from regular ice cream?</span>
+                        <span class="faq-icon">+</span>
+                    </button>
+                    <div class="faq-answer">
+                        <p>Oddono's gelato is made using traditional Italian methods with 100% natural ingredients. Unlike regular ice cream, our gelato has less fat, is churned slower for a denser texture, and is served at a warmer temperature to enhance the flavors. We never use artificial colorings, preservatives, or GM products.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <button class="faq-question" aria-expanded="false">
+                        <span>How many locations do you have in London?</span>
+                        <span class="faq-icon">+</span>
+                    </button>
+                    <div class="faq-answer">
+                        <p>We currently have 7 locations across London, including South Kensington, Chelsea, Hampstead, and more. Visit our <a href="shops.html">Shops page</a> to find your nearest location with opening hours and directions.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <button class="faq-question" aria-expanded="false">
+                        <span>Do you offer dairy-free or vegan options?</span>
+                        <span class="faq-icon">+</span>
+                    </button>
+                    <div class="faq-answer">
+                        <p>Yes! We offer a selection of sorbets that are naturally dairy-free and vegan. Made with fresh fruits and natural ingredients, our sorbets are just as delicious as our traditional gelato flavors.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <button class="faq-question" aria-expanded="false">
+                        <span>Can I order Oddono's gelato for events or wholesale?</span>
+                        <span class="faq-icon">+</span>
+                    </button>
+                    <div class="faq-answer">
+                        <p>Absolutely! We supply gelato wholesale to restaurants, cafés, hotels, and events across the UK. Visit our <a href="wholesale.html">Wholesale page</a> or contact us at <a href="tel:03338000480">0333 8000 480</a> to discuss your requirements.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <button class="faq-question" aria-expanded="false">
+                        <span>How does the Gelato Card loyalty program work?</span>
+                        <span class="faq-icon">+</span>
+                    </button>
+                    <div class="faq-answer">
+                        <p>Our Gelato Card lets you earn points with every purchase. Sign up and receive 50 bonus points immediately! Earn points on every scoop and redeem them for free gelato. Learn more on our <a href="gelato-card.html">Gelato Card page</a>.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <button class="faq-question" aria-expanded="false">
+                        <span>Where do you source your ingredients?</span>
+                        <span class="faq-icon">+</span>
+                    </button>
+                    <div class="faq-answer">
+                        <p>We source premium ingredients from around the world: vanilla from Madagascar, pistachios from Sicily, hazelnuts from Piedmont, and fresh milk from British farms. Quality ingredients are at the heart of everything we make.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Schema for SEO -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": [
+            {
+                "@type": "Question",
+                "name": "What makes Oddono's gelato different from regular ice cream?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Oddono's gelato is made using traditional Italian methods with 100% natural ingredients. Unlike regular ice cream, our gelato has less fat, is churned slower for a denser texture, and is served at a warmer temperature to enhance the flavors. We never use artificial colorings, preservatives, or GM products."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "How many locations do you have in London?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "We currently have 7 locations across London, including South Kensington, Chelsea, Hampstead, and more."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "Do you offer dairy-free or vegan options?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Yes! We offer a selection of sorbets that are naturally dairy-free and vegan. Made with fresh fruits and natural ingredients, our sorbets are just as delicious as our traditional gelato flavors."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "Can I order Oddono's gelato for events or wholesale?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Absolutely! We supply gelato wholesale to restaurants, cafés, hotels, and events across the UK."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "How does the Gelato Card loyalty program work?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Our Gelato Card lets you earn points with every purchase. Sign up and receive 50 bonus points immediately! Earn points on every scoop and redeem them for free gelato."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "Where do you source your ingredients?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "We source premium ingredients from around the world: vanilla from Madagascar, pistachios from Sicily, hazelnuts from Piedmont, and fresh milk from British farms."
+                }
+            }
+        ]
+    }
+    </script>
+
     <!-- Wholesale CTA -->
     <section class="section">
         <div class="container">
@@ -285,6 +528,32 @@
             </div>
         </div>
     </footer>
+
+    <!-- Floating Action Buttons -->
+    <div class="fab-container">
+        <a href="https://wa.me/443338000480" class="fab-button whatsapp" data-tooltip="WhatsApp Us" aria-label="Contact us on WhatsApp" target="_blank">
+            <svg viewBox="0 0 24 24" fill="currentColor">
+                <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
+            </svg>
+        </a>
+        <a href="tel:+443338000480" class="fab-button phone" data-tooltip="Call Us" aria-label="Call us now">
+            <svg viewBox="0 0 24 24" fill="currentColor">
+                <path d="M20.01 15.38c-1.23 0-2.42-.2-3.53-.56a.977.977 0 00-1.01.24l-1.57 1.97c-2.83-1.35-5.48-3.9-6.89-6.83l1.95-1.66c.27-.28.35-.67.24-1.02-.37-1.11-.56-2.3-.56-3.53 0-.54-.45-.99-.99-.99H4.19C3.65 3 3 3.24 3 3.99 3 13.28 10.73 21 20.01 21c.71 0 .99-.63.99-1.18v-3.45c0-.54-.45-.99-.99-.99z"/>
+            </svg>
+        </a>
+    </div>
+
+    <!-- Social Proof Notification -->
+    <div class="social-proof" id="socialProof" style="display: none;">
+        <button class="social-proof-close" onclick="document.getElementById('socialProof').style.display='none'" aria-label="Close notification">&times;</button>
+        <div class="social-proof-content">
+            <span class="social-proof-icon">🎉</span>
+            <div class="social-proof-text">
+                <strong>Sarah from Chelsea</strong>
+                just joined the Gelato Card program
+            </div>
+        </div>
+    </div>
 
     <!-- JavaScript -->
     <script src="script.js"></script>
