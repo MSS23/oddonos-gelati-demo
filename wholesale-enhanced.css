@@ -1,0 +1,783 @@
+/* ===========================================
+   WHOLESALE PAGE - ENHANCED STYLES
+   UX/SEO Optimized for 100/100 Audit Score
+   =========================================== */
+
+/* Skip Link - Accessibility */
+.skip-link {
+    position: absolute;
+    top: -40px;
+    left: 0;
+    background: var(--primary-blue);
+    color: white;
+    padding: 8px;
+    text-decoration: none;
+    z-index: 100;
+}
+
+.skip-link:focus {
+    top: 0;
+}
+
+/* Sticky CTA Bar - Top */
+.sticky-cta-top {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    background: linear-gradient(135deg, var(--primary-blue), #0066CC);
+    color: white;
+    padding: 0.75rem 0;
+    z-index: 999;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    transform: translateY(-100%);
+    transition: transform 0.3s ease;
+}
+
+.sticky-cta-top.visible {
+    transform: translateY(0);
+}
+
+.sticky-cta-top .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 1rem;
+}
+
+.cta-message {
+    font-size: 0.95rem;
+    font-weight: 500;
+}
+
+.cta-buttons {
+    display: flex;
+    gap: 0.75rem;
+}
+
+.btn-cta-primary {
+    background: white;
+    color: var(--primary-blue);
+    padding: 0.5rem 1.25rem;
+    font-weight: 600;
+    font-size: 0.9rem;
+    border-radius: 25px;
+    border: none;
+}
+
+.btn-cta-primary:hover {
+    background: var(--light-cream);
+    transform: scale(1.05);
+}
+
+.btn-cta-secondary {
+    background: rgba(255,255,255,0.2);
+    color: white;
+    padding: 0.5rem 1.25rem;
+    font-weight: 600;
+    font-size: 0.9rem;
+    border-radius: 25px;
+    border: 2px solid white;
+}
+
+.btn-cta-secondary:hover {
+    background: white;
+    color: var(--primary-blue);
+}
+
+/* Hero Section - Enhanced */
+.hero-wholesale {
+    position: relative;
+    height: 650px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+}
+
+.hero-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(135deg, rgba(0,0,0,0.7), rgba(0,82,163,0.6));
+    z-index: 1;
+}
+
+.hero-wholesale .hero-bg {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: 0;
+}
+
+.hero-wholesale .hero-content {
+    position: relative;
+    z-index: 2;
+    text-align: center;
+    max-width: 900px;
+    padding: 2rem;
+}
+
+.hero-wholesale .hero-title {
+    font-size: clamp(2.5rem, 6vw, 4.5rem);
+    color: white;
+    margin-bottom: 1.5rem;
+    line-height: 1.1;
+    text-shadow: 2px 2px 8px rgba(0,0,0,0.3);
+}
+
+.hero-title .highlight {
+    background: linear-gradient(135deg, #FFD700, #FFA500);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.hero-wholesale .hero-subtitle {
+    font-size: clamp(1.1rem, 2vw, 1.4rem);
+    color: rgba(255,255,255,0.95);
+    margin-bottom: 2.5rem;
+    line-height: 1.6;
+}
+
+.hero-cta-group {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin-bottom: 2rem;
+}
+
+.btn-hero-primary,
+.btn-hero-secondary {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 1rem 2rem;
+    font-size: 1.1rem;
+    font-weight: 600;
+    border-radius: 50px;
+    transition: all 0.3s ease;
+}
+
+.btn-hero-primary {
+    background: var(--accent-gold);
+    color: var(--dark-navy);
+    box-shadow: 0 4px 20px rgba(212, 175, 55, 0.4);
+}
+
+.btn-hero-primary:hover {
+    background: #FFD700;
+    transform: translateY(-3px);
+    box-shadow: 0 6px 25px rgba(212, 175, 55, 0.6);
+}
+
+.btn-hero-secondary {
+    background: rgba(255,255,255,0.15);
+    color: white;
+    border: 2px solid white;
+    backdrop-filter: blur(10px);
+}
+
+.btn-hero-secondary:hover {
+    background: white;
+    color: var(--primary-blue);
+}
+
+.trust-indicators {
+    display: flex;
+    gap: 2rem;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.trust-badge {
+    display: inline-flex;
+    align-items: center;
+    background: rgba(255,255,255,0.2);
+    padding: 0.5rem 1rem;
+    border-radius: 25px;
+    color: white;
+    font-weight: 600;
+    font-size: 0.95rem;
+    backdrop-filter: blur(5px);
+}
+
+/* Benefits Section */
+.benefits-section {
+    background: var(--light-cream);
+}
+
+.benefits-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 2rem;
+    margin-top: 3rem;
+}
+
+.benefit-card {
+    background: white;
+    padding: 2.5rem 2rem;
+    border-radius: 15px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+    text-align: center;
+    transition: all 0.3s ease;
+}
+
+.benefit-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 8px 30px rgba(0,0,0,0.15);
+}
+
+.benefit-icon {
+    font-size: 3.5rem;
+    margin-bottom: 1rem;
+}
+
+.benefit-title {
+    font-size: 1.5rem;
+    color: var(--text-dark);
+    margin-bottom: 1rem;
+}
+
+.benefit-description {
+    color: var(--text-light);
+    line-height: 1.7;
+}
+
+/* Product Gallery - Enhanced */
+.product-gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    margin-top: 3rem;
+}
+
+.product-card {
+    background: white;
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+    transition: all 0.3s ease;
+}
+
+.product-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 8px 30px rgba(0,0,0,0.2);
+}
+
+.product-image-wrapper {
+    position: relative;
+    overflow: hidden;
+}
+
+.product-image {
+    width: 100%;
+    height: 250px;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+}
+
+.product-card:hover .product-image {
+    transform: scale(1.1);
+}
+
+.product-badge {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    background: var(--accent-gold);
+    color: var(--dark-navy);
+    padding: 0.4rem 1rem;
+    border-radius: 20px;
+    font-weight: 600;
+    font-size: 0.85rem;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.2);
+}
+
+.product-info {
+    padding: 1.5rem;
+}
+
+.product-title {
+    font-size: 1.4rem;
+    color: var(--text-dark);
+    margin-bottom: 0.75rem;
+}
+
+.product-description {
+    color: var(--text-light);
+    line-height: 1.6;
+    margin-bottom: 1rem;
+}
+
+.product-meta {
+    display: inline-block;
+    background: var(--warm-beige);
+    color: var(--text-dark);
+    padding: 0.35rem 0.75rem;
+    border-radius: 15px;
+    font-size: 0.85rem;
+    font-weight: 500;
+}
+
+/* Testimonials - Enhanced Visual Cards */
+.testimonials-enhanced-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 2rem;
+    margin-top: 3rem;
+}
+
+.testimonial-enhanced-card {
+    background: white;
+    padding: 2rem;
+    border-radius: 15px;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+    transition: all 0.3s ease;
+    border-left: 4px solid var(--accent-gold);
+}
+
+.testimonial-enhanced-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 30px rgba(0,0,0,0.15);
+}
+
+.testimonial-header {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin-bottom: 1.5rem;
+}
+
+.partner-logo-placeholder {
+    width: 60px;
+    height: 60px;
+    background: linear-gradient(135deg, var(--primary-blue), #0066CC);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+}
+
+.partner-initial {
+    color: white;
+    font-size: 1.5rem;
+    font-weight: 700;
+}
+
+.testimonial-meta {
+    flex: 1;
+}
+
+.partner-name {
+    font-size: 1.1rem;
+    color: var(--text-dark);
+    margin-bottom: 0.25rem;
+}
+
+.rating {
+    color: var(--accent-gold);
+    font-size: 1rem;
+}
+
+.testimonial-quote {
+    font-style: italic;
+    color: var(--text-dark);
+    line-height: 1.7;
+    margin-bottom: 1rem;
+    font-size: 1.05rem;
+}
+
+.testimonial-author {
+    font-weight: 600;
+    color: var(--primary-blue);
+    margin-bottom: 0.25rem;
+}
+
+.testimonial-location {
+    color: var(--text-light);
+    font-size: 0.9rem;
+}
+
+/* Lead Capture Section */
+.lead-capture-section {
+    background: linear-gradient(135deg, var(--primary-blue), #0066CC);
+    padding: 4rem 0;
+}
+
+.bg-primary {
+    background: linear-gradient(135deg, var(--primary-blue), #0066CC);
+}
+
+.lead-capture-content {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 3rem;
+    align-items: center;
+}
+
+.text-white {
+    color: white;
+    margin-bottom: 1rem;
+}
+
+.text-white-secondary {
+    color: rgba(255,255,255,0.9);
+    font-size: 1.1rem;
+    line-height: 1.6;
+    margin-bottom: 1.5rem;
+}
+
+.benefits-checklist {
+    list-style: none;
+    padding: 0;
+}
+
+.benefits-checklist li {
+    color: white;
+    padding: 0.5rem 0;
+    font-size: 1.05rem;
+}
+
+.lead-capture-form-wrapper {
+    background: rgba(255,255,255,0.1);
+    padding: 2rem;
+    border-radius: 15px;
+    backdrop-filter: blur(10px);
+}
+
+.form-group-inline {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.form-input-white {
+    padding: 1rem;
+    border: 2px solid rgba(255,255,255,0.3);
+    border-radius: 8px;
+    font-size: 1rem;
+    background: rgba(255,255,255,0.15);
+    color: white;
+    backdrop-filter: blur(5px);
+}
+
+.form-input-white::placeholder {
+    color: rgba(255,255,255,0.7);
+}
+
+.form-input-white:focus {
+    outline: none;
+    border-color: white;
+    background: rgba(255,255,255,0.25);
+}
+
+.btn-white {
+    background: white;
+    color: var(--primary-blue);
+    padding: 1rem 2rem;
+    font-weight: 600;
+    border: none;
+}
+
+.btn-white:hover {
+    background: var(--light-cream);
+    transform: scale(1.02);
+}
+
+.form-privacy-note {
+    color: rgba(255,255,255,0.8);
+    font-size: 0.85rem;
+    margin-top: 1rem;
+    text-align: center;
+}
+
+.form-privacy-note a {
+    color: white;
+    text-decoration: underline;
+}
+
+/* Enquiry Form Section */
+.enquiry-wrapper {
+    display: grid;
+    grid-template-columns: 1fr 1.5fr;
+    gap: 3rem;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.enquiry-info {
+    position: sticky;
+    top: 100px;
+    height: fit-content;
+}
+
+.lead-text {
+    font-size: 1.1rem;
+    color: var(--text-light);
+    line-height: 1.7;
+    margin-bottom: 2rem;
+}
+
+.contact-info-card {
+    background: var(--warm-beige);
+    padding: 2rem;
+    border-radius: 15px;
+    margin-top: 2rem;
+}
+
+.contact-info-card h3 {
+    margin-bottom: 1.5rem;
+}
+
+.contact-info-item {
+    display: flex;
+    gap: 1rem;
+    margin-bottom: 1.5rem;
+}
+
+.contact-info-item svg {
+    flex-shrink: 0;
+    color: var(--primary-blue);
+    margin-top: 0.25rem;
+}
+
+.contact-info-item strong {
+    display: block;
+    margin-bottom: 0.25rem;
+}
+
+.contact-info-item a {
+    color: var(--primary-blue);
+    font-weight: 500;
+}
+
+.enquiry-form-enhanced {
+    background: white;
+    padding: 2.5rem;
+    border-radius: 15px;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+}
+
+.form-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1.5rem;
+}
+
+.form-group {
+    margin-bottom: 1.5rem;
+}
+
+.form-label {
+    display: block;
+    font-weight: 600;
+    color: var(--text-dark);
+    margin-bottom: 0.5rem;
+}
+
+.form-input,
+.form-textarea {
+    width: 100%;
+    padding: 0.875rem 1rem;
+    border: 2px solid var(--border-light);
+    border-radius: 8px;
+    font-size: 1rem;
+    transition: all 0.3s ease;
+}
+
+.form-input:focus,
+.form-textarea:focus {
+    outline: none;
+    border-color: var(--primary-blue);
+    box-shadow: 0 0 0 3px rgba(0,82,163,0.1);
+}
+
+.form-group-checkbox {
+    display: flex;
+    gap: 0.75rem;
+    align-items: flex-start;
+    margin-bottom: 1.5rem;
+}
+
+.form-group-checkbox input[type="checkbox"] {
+    margin-top: 0.25rem;
+    width: 18px;
+    height: 18px;
+    cursor: pointer;
+}
+
+.form-group-checkbox label {
+    font-size: 0.95rem;
+    color: var(--text-light);
+}
+
+.btn-block {
+    width: 100%;
+    justify-content: center;
+}
+
+.btn-large {
+    padding: 1rem 2rem;
+    font-size: 1.1rem;
+}
+
+.form-note {
+    text-align: center;
+    color: var(--text-light);
+    font-size: 0.9rem;
+    margin-top: 1rem;
+}
+
+/* Final CTA Section */
+.final-cta-section {
+    padding: 5rem 0;
+}
+
+.bg-dark {
+    background: var(--dark-navy);
+}
+
+.cta-button-group {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+/* Sticky CTA Bottom - Mobile */
+.sticky-cta-bottom {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: white;
+    padding: 1rem;
+    box-shadow: 0 -2px 10px rgba(0,0,0,0.1);
+    z-index: 998;
+    display: none;
+}
+
+.sticky-cta-bottom .container {
+    display: flex;
+    gap: 0.75rem;
+}
+
+.btn-cta-mobile,
+.btn-cta-mobile-secondary {
+    flex: 1;
+    padding: 0.875rem;
+    font-weight: 600;
+    text-align: center;
+    border-radius: 8px;
+}
+
+.btn-cta-mobile {
+    background: var(--primary-blue);
+    color: white;
+}
+
+.btn-cta-mobile-secondary {
+    background: var(--accent-gold);
+    color: var(--dark-navy);
+}
+
+/* Mobile Optimizations */
+@media (max-width: 768px) {
+    .sticky-cta-top .container {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .cta-buttons {
+        width: 100%;
+        justify-content: center;
+    }
+
+    .hero-wholesale {
+        height: 550px;
+    }
+
+    .hero-cta-group {
+        flex-direction: column;
+    }
+
+    .btn-hero-primary,
+    .btn-hero-secondary {
+        width: 100%;
+        justify-content: center;
+    }
+
+    .trust-indicators {
+        flex-direction: column;
+        gap: 0.75rem;
+    }
+
+    .benefits-grid,
+    .product-gallery-grid,
+    .testimonials-enhanced-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .lead-capture-content {
+        grid-template-columns: 1fr;
+    }
+
+    .enquiry-wrapper {
+        grid-template-columns: 1fr;
+    }
+
+    .enquiry-info {
+        position: static;
+    }
+
+    .form-row {
+        grid-template-columns: 1fr;
+    }
+
+    .sticky-cta-bottom {
+        display: block;
+    }
+
+    /* Add padding to main content to account for sticky bottom bar */
+    main {
+        padding-bottom: 80px;
+    }
+}
+
+/* Touch Targets - Minimum 44x44px */
+@media (hover: none) and (pointer: coarse) {
+    .btn,
+    a,
+    button,
+    input,
+    select,
+    textarea {
+        min-height: 44px;
+        min-width: 44px;
+    }
+}
+
+/* High Contrast Mode Support */
+@media (prefers-contrast: high) {
+    .benefit-card,
+    .product-card,
+    .testimonial-enhanced-card {
+        border: 2px solid var(--text-dark);
+    }
+}
+
+/* Print Styles */
+@media print {
+    .sticky-cta-top,
+    .sticky-cta-bottom,
+    .hero-cta-group,
+    .cta-button-group {
+        display: none !important;
+    }
+}
