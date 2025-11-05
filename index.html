@@ -240,6 +240,7 @@
             <ul class="nav-menu">
                 <li><a href="index.html" class="nav-link">Home</a></li>
                 <li><a href="about.html" class="nav-link">About Us</a></li>
+                <li><a href="flavors.html" class="nav-link">Flavors</a></li>
                 <li><a href="shops.html" class="nav-link">Shops</a></li>
                 <li><a href="wholesale.html" class="nav-link">Wholesale</a></li>
                 <li><a href="reviews.html" class="nav-link">Reviews</a></li>
@@ -540,6 +541,49 @@
         </div>
     </section>
 
+    <!-- Newsletter Signup Section -->
+    <section class="section bg-beige">
+        <div class="container">
+            <div style="max-width: 600px; margin: 0 auto; text-align: center;">
+                <h2 class="section-title">Stay Sweet with Oddono's</h2>
+                <p class="section-subtitle" style="margin-bottom: 2rem;">
+                    Subscribe to our newsletter for exclusive flavors, special offers, and gelato inspiration delivered to your inbox.
+                </p>
+                <form class="newsletter-form" id="newsletter-form">
+                    <div style="display: flex; gap: 1rem; max-width: 500px; margin: 0 auto; flex-wrap: wrap;">
+                        <input
+                            type="email"
+                            id="newsletter-email"
+                            placeholder="Enter your email address"
+                            required
+                            style="
+                                flex: 1;
+                                min-width: 250px;
+                                padding: 1rem 1.5rem;
+                                border: 2px solid var(--border-light);
+                                border-radius: 8px;
+                                font-size: 1rem;
+                                font-family: var(--font-secondary);
+                                transition: border-color 0.3s ease;
+                            "
+                            aria-label="Email address for newsletter"
+                        >
+                        <button
+                            type="submit"
+                            class="btn btn-primary"
+                            style="white-space: nowrap;"
+                        >
+                            Subscribe
+                        </button>
+                    </div>
+                    <p style="font-size: 0.875rem; color: var(--text-light); margin-top: 1rem;">
+                        We respect your privacy. Unsubscribe anytime. See our <a href="privacy.html" style="color: var(--primary-blue); text-decoration: underline;">Privacy Policy</a>.
+                    </p>
+                </form>
+            </div>
+        </div>
+    </section>
+
     <!-- Footer -->
     <footer class="footer">
         <div class="container">
@@ -630,6 +674,19 @@
 
     <!-- JavaScript -->
     <script src="script.js"></script>
+    <script>
+        // Newsletter form handling
+        const newsletterForm = document.getElementById('newsletter-form');
+        if (newsletterForm) {
+            newsletterForm.addEventListener('submit', (e) => {
+                e.preventDefault();
+                const email = document.getElementById('newsletter-email').value;
+                // In production, this would send to your email marketing service
+                alert(`Thank you for subscribing! We'll send updates to ${email}`);
+                newsletterForm.reset();
+            });
+        }
+    </script>
 
     <!-- OPTIONAL: Live Social Proof with Real Data -->
     <!-- Uncomment the line below AFTER setting up your backend API or Google Reviews -->
