@@ -1269,4 +1269,207 @@ p {
         max-width: 150px;
         margin-bottom: 1rem;
     }
+
+    .container {
+        padding: 0 1rem;
+    }
+
+    .section {
+        padding: 2rem 0;
+    }
+
+    h1, .hero-title {
+        font-size: 1.75rem !important;
+    }
+
+    h2, .section-title {
+        font-size: 1.5rem !important;
+    }
+
+    .hero-subtitle, .section-subtitle {
+        font-size: 0.95rem !important;
+    }
+
+    .btn {
+        padding: 0.75rem 1.5rem;
+        font-size: 0.95rem;
+        width: 100%;
+        justify-content: center;
+    }
+
+    .hero-cta-group {
+        flex-direction: column;
+        gap: 0.75rem;
+    }
+
+    .card-grid {
+        gap: 1.5rem;
+    }
+
+    .features-grid {
+        gap: 1.5rem;
+    }
+}
+
+/* Additional responsive fixes for very small screens */
+@media (max-width: 360px) {
+    .nav {
+        padding: 1rem;
+    }
+
+    .logo-image {
+        height: 40px;
+    }
+
+    .container {
+        padding: 0 0.75rem;
+    }
+
+    h1, .hero-title {
+        font-size: 1.5rem !important;
+    }
+
+    h2, .section-title {
+        font-size: 1.25rem !important;
+    }
+}
+
+/* Delivery CTA Section - Fully Responsive */
+.delivery-cta-section {
+    padding: 3rem 0;
+    background: linear-gradient(135deg, #0052A3 0%, #0066CC 100%);
+}
+
+.delivery-cta-content {
+    text-align: center;
+    color: white;
+}
+
+.delivery-cta-title {
+    color: white;
+    font-size: 2rem;
+    margin-bottom: 1rem;
+}
+
+.delivery-cta-subtitle {
+    margin-bottom: 2rem;
+    font-size: 1.125rem;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+    color: rgba(255, 255, 255, 0.95);
+}
+
+.delivery-buttons {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+    flex-wrap: wrap;
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.delivery-btn {
+    background: white;
+    color: var(--primary-blue);
+    padding: 1rem 2rem;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.75rem;
+    font-weight: 600;
+    border-radius: 8px;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    white-space: nowrap;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    min-width: 200px;
+    justify-content: center;
+}
+
+.delivery-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.2);
+    background: var(--light-cream);
+}
+
+.delivery-btn svg {
+    flex-shrink: 0;
+}
+
+@media (max-width: 768px) {
+    .delivery-cta-section {
+        padding: 2rem 0;
+    }
+
+    .delivery-cta-title {
+        font-size: 1.75rem;
+    }
+
+    .delivery-cta-subtitle {
+        font-size: 1rem;
+        padding: 0 1rem;
+    }
+
+    .delivery-buttons {
+        flex-direction: column;
+        padding: 0 1rem;
+        gap: 0.75rem;
+    }
+
+    .delivery-btn {
+        width: 100%;
+        max-width: 400px;
+        margin: 0 auto;
+    }
+}
+
+@media (max-width: 480px) {
+    .delivery-cta-title {
+        font-size: 1.5rem;
+    }
+
+    .delivery-btn {
+        padding: 0.875rem 1.5rem;
+        font-size: 0.95rem;
+    }
+
+    .delivery-btn span {
+        font-size: 0.95rem;
+    }
+}
+
+/* Newsletter Form - Mobile Optimized */
+.newsletter-form input[type="email"] {
+    flex: 1;
+    min-width: 250px;
+    padding: 1rem 1.5rem;
+    border: 2px solid var(--border-light);
+    border-radius: 8px;
+    font-size: 1rem;
+    font-family: var(--font-secondary);
+    transition: border-color 0.3s ease;
+}
+
+.newsletter-form input[type="email"]:focus {
+    outline: none;
+    border-color: var(--primary-blue);
+}
+
+.newsletter-form button {
+    white-space: nowrap;
+}
+
+@media (max-width: 600px) {
+    .newsletter-form input[type="email"] {
+        width: 100%;
+        min-width: 100%;
+    }
+
+    .newsletter-form button {
+        width: 100%;
+    }
+
+    .newsletter-form > div {
+        width: 100%;
+    }
 }
