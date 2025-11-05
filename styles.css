@@ -1215,3 +1215,52 @@ p {
         text-align: center;
     }
 }
+
+/* ===================================
+   Logo Styles
+   =================================== */
+
+/* Logo in hero sections */
+.hero-logo {
+    max-width: 280px;
+    width: 100%;
+    height: auto;
+    margin: 0 auto 2rem;
+    display: block;
+    filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.25));
+    transition: transform 0.3s ease;
+}
+
+/* Logo in page headers */
+.page-header-logo {
+    max-width: 220px;
+    width: 100%;
+    height: auto;
+    margin: 0 auto 2rem;
+    display: block;
+}
+
+/* Responsive logo sizing */
+@media (max-width: 768px) {
+    .hero-logo {
+        max-width: 220px;
+        margin-bottom: 1.5rem;
+    }
+
+    .page-header-logo {
+        max-width: 180px;
+        margin-bottom: 1.5rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .hero-logo {
+        max-width: 180px;
+        margin-bottom: 1rem;
+    }
+
+    .page-header-logo {
+        max-width: 150px;
+        margin-bottom: 1rem;
+    }
+}
