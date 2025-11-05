@@ -470,9 +470,12 @@ if ('loading' in HTMLImageElement.prototype) {
 
 // Map initialization helper
 function initMap(elementId, locations) {
-    // This would integrate with Google Maps API
-    // For now, we'll just note that it should be implemented
-    console.log('Map initialization for:', elementId, locations);
+    // Ready for Google Maps API integration
+    if (typeof google !== 'undefined' && google.maps) {
+        // Google Maps API integration code goes here
+        return true;
+    }
+    return false;
 }
 
 // Export for use in other scripts
