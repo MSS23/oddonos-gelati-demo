@@ -160,6 +160,12 @@ p {
     border-radius: 8px;
 }
 
+.logo-image {
+    height: 50px;
+    width: auto;
+    display: block;
+}
+
 .nav-menu {
     display: flex;
     gap: 2rem;
