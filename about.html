@@ -9,10 +9,11 @@
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
     <!-- Stylesheet -->
     <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="animations.css">
 </head>
 <body>
     <!-- Header & Navigation -->
@@ -42,11 +43,16 @@
     </header>
 
     <!-- Hero Section -->
-    <section class="hero">
-        <img src="images/IMG_20230608_195820.jpg" alt="Founders of Oddono's Gelato" class="hero-bg" loading="lazy">
+    <section class="hero" id="hero">
+        <img src="images/IMG_20230608_195820.jpg" alt="Founders of Oddono's Gelato" class="hero-bg">
         <div class="hero-content">
+            <span class="hero-label">Our Story</span>
             <h1 class="hero-title">A Story of Passion, Tradition, and True Italian Gelato</h1>
             <p class="hero-subtitle">Discover the journey behind every scoop of Oddono's, crafted with love and the finest natural ingredients since 2004.</p>
+        </div>
+        <div class="hero-scroll">
+            <span>Scroll</span>
+            <div class="hero-scroll-line"></div>
         </div>
     </section>
 
@@ -54,6 +60,7 @@
     <section class="section">
         <div class="container">
             <div class="section-header">
+                <span class="section-label">Philosophy</span>
                 <h2 class="section-title">The Oddono's Difference</h2>
                 <p class="section-subtitle">
                     Our philosophy is simple: to offer the freshest, most authentic Italian gelato, made daily with the finest
@@ -93,6 +100,7 @@
     <section class="section bg-cream">
         <div class="container">
             <div class="section-header">
+                <span class="section-label">Timeline</span>
                 <h2 class="section-title">Our Journey</h2>
             </div>
 

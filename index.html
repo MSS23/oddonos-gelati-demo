@@ -31,7 +31,7 @@
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
     <!-- Stylesheets -->
     <link rel="stylesheet" href="styles.css">
@@ -257,17 +257,60 @@
     </header>
 
     <!-- Hero Section -->
-    <section class="hero">
-        <img src="images/PXL_20251103_214658009.jpg" alt="Fresh Italian gelato in authentic display case at Oddono's London showing multiple colorful flavors" class="hero-bg" loading="lazy">
+    <section class="hero" id="hero">
+        <img src="images/PXL_20251103_214658516.jpg" alt="Fresh Italian gelato in authentic display case at Oddono's London showing multiple colorful flavors" class="hero-bg">
         <div class="hero-content">
+            <span class="hero-label">London's Finest Since 2004</span>
             <h1 class="hero-title">Authentic Italian Gelato, Made with Passion</h1>
-            <p class="hero-subtitle">Award winning Fresh Natural Gelato since 2004. Crafted daily with the freshest, most natural ingredients for an unforgettable taste.</p>
+            <p class="hero-subtitle">Award-winning artisan gelato, crafted daily with the freshest natural ingredients for an unforgettable taste experience.</p>
             <div class="hero-cta-group">
-                <a href="shops.html" class="btn btn-primary">Find Your Nearest Oddono's</a>
+                <a href="shops.html" class="btn btn-primary">Find Your Nearest Shop</a>
                 <a href="wholesale.html" class="btn btn-secondary">Order Wholesale</a>
             </div>
         </div>
+        <div class="hero-scroll">
+            <span>Scroll</span>
+            <div class="hero-scroll-line"></div>
+        </div>
     </section>
+
+    <!-- Marquee Ticker Strip -->
+    <div class="marquee-strip">
+        <div class="marquee-track">
+            <span class="marquee-item">Award-Winning Gelato</span>
+            <span class="marquee-dot"></span>
+            <span class="marquee-item">130+ Flavors</span>
+            <span class="marquee-dot"></span>
+            <span class="marquee-item">100% Natural</span>
+            <span class="marquee-dot"></span>
+            <span class="marquee-item">Made Fresh Daily</span>
+            <span class="marquee-dot"></span>
+            <span class="marquee-item">7 London Locations</span>
+            <span class="marquee-dot"></span>
+            <span class="marquee-item">Since 2004</span>
+            <span class="marquee-dot"></span>
+            <span class="marquee-item">Pistachio di Bronte</span>
+            <span class="marquee-dot"></span>
+            <span class="marquee-item">No Preservatives</span>
+            <span class="marquee-dot"></span>
+            <span class="marquee-item">Award-Winning Gelato</span>
+            <span class="marquee-dot"></span>
+            <span class="marquee-item">130+ Flavors</span>
+            <span class="marquee-dot"></span>
+            <span class="marquee-item">100% Natural</span>
+            <span class="marquee-dot"></span>
+            <span class="marquee-item">Made Fresh Daily</span>
+            <span class="marquee-dot"></span>
+            <span class="marquee-item">7 London Locations</span>
+            <span class="marquee-dot"></span>
+            <span class="marquee-item">Since 2004</span>
+            <span class="marquee-dot"></span>
+            <span class="marquee-item">Pistachio di Bronte</span>
+            <span class="marquee-dot"></span>
+            <span class="marquee-item">No Preservatives</span>
+            <span class="marquee-dot"></span>
+        </div>
+    </div>
 
     <!-- Online Ordering CTA Section -->
     <section class="section delivery-cta-section">
@@ -305,11 +348,10 @@
     <section class="section">
         <div class="container">
             <div class="section-header">
+                <span class="section-label">Discover</span>
                 <h2 class="section-title">Welcome to Oddono's Gelati</h2>
                 <p class="section-subtitle">
-                    Oddono's Gelati Italiani has been crafting authentic Italian gelato in London since 2004.
-                    We use 100% natural ingredients and traditional recipes to create a truly unforgettable gelato experience.
-                    From our founder's Italian grandmother's secret recipes to London's favorite gelato destination.
+                    Crafting authentic Italian gelato in London since 2004. 100% natural ingredients and traditional family recipes for a truly unforgettable experience.
                 </p>
             </div>
 
@@ -361,9 +403,10 @@
     <section class="section features">
         <div class="container">
             <div class="section-header">
+                <span class="section-label">Our Promise</span>
                 <h2 class="section-title">What Makes Us Special</h2>
                 <p class="section-subtitle">
-                    We're committed to authenticity, quality, and the true Italian gelato experience.
+                    Committed to authenticity, quality, and the true Italian gelato experience.
                 </p>
             </div>
 
@@ -419,6 +462,30 @@
         </div>
     </section>
 
+    <!-- Animated Stats Counter -->
+    <section class="stats-section">
+        <div class="container">
+            <div class="stats-grid">
+                <div class="stat-item">
+                    <span class="stat-number" data-target="130" data-suffix="+">0</span>
+                    <span class="stat-label">Unique Flavors</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-number" data-target="7">0</span>
+                    <span class="stat-label">London Locations</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-number" data-target="20" data-suffix="+">0</span>
+                    <span class="stat-label">Years of Craft</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-number" data-target="4.8" data-decimal="true">0</span>
+                    <span class="stat-label">Google Rating</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <!-- Testimonial Quote -->
     <section class="quote-section">
         <div class="container">
@@ -433,6 +500,7 @@
     <section class="section faq-section">
         <div class="container">
             <div class="section-header">
+                <span class="section-label">FAQ</span>
                 <h2 class="section-title">Frequently Asked Questions</h2>
                 <p class="section-subtitle">Everything you need to know about Oddono's gelato</p>
             </div>
@@ -655,6 +723,9 @@
             </div>
         </div>
     </div>
+
+    <!-- Cursor follower (desktop only) -->
+    <div class="cursor-glow" id="cursorGlow"></div>
 
     <!-- JavaScript -->
     <script src="script.js"></script>

@@ -8,7 +8,7 @@
     position: absolute;
     top: -40px;
     left: 0;
-    background: var(--primary-blue);
+    background: var(--primary);
     color: white;
     padding: 8px;
     text-decoration: none;
@@ -25,7 +25,7 @@
     top: 0;
     left: 0;
     right: 0;
-    background: linear-gradient(135deg, var(--primary-blue), #0066CC);
+    background: linear-gradient(135deg, var(--primary), #0066CC);
     color: white;
     padding: 0.75rem 0;
     z-index: 999;
@@ -57,7 +57,7 @@
 
 .btn-cta-primary {
     background: white;
-    color: var(--primary-blue);
+    color: var(--primary);
     padding: 0.5rem 1.25rem;
     font-weight: 600;
     font-size: 0.9rem;
@@ -82,7 +82,7 @@
 
 .btn-cta-secondary:hover {
     background: white;
-    color: var(--primary-blue);
+    color: var(--primary);
 }
 
 /* Hero Section - Enhanced */
@@ -184,7 +184,7 @@
 
 .btn-hero-secondary:hover {
     background: white;
-    color: var(--primary-blue);
+    color: var(--primary);
 }
 
 .trust-indicators {
@@ -356,7 +356,7 @@
 .partner-logo-placeholder {
     width: 60px;
     height: 60px;
-    background: linear-gradient(135deg, var(--primary-blue), #0066CC);
+    background: linear-gradient(135deg, var(--primary), #0066CC);
     border-radius: 50%;
     display: flex;
     align-items: center;
@@ -395,7 +395,7 @@
 
 .testimonial-author {
     font-weight: 600;
-    color: var(--primary-blue);
+    color: var(--primary);
     margin-bottom: 0.25rem;
 }
 
@@ -406,12 +406,12 @@
 
 /* Lead Capture Section */
 .lead-capture-section {
-    background: linear-gradient(135deg, var(--primary-blue), #0066CC);
+    background: linear-gradient(135deg, var(--primary), #0066CC);
     padding: 4rem 0;
 }
 
 .bg-primary {
-    background: linear-gradient(135deg, var(--primary-blue), #0066CC);
+    background: linear-gradient(135deg, var(--primary), #0066CC);
 }
 
 .lead-capture-content {
@@ -479,7 +479,7 @@
 
 .btn-white {
     background: white;
-    color: var(--primary-blue);
+    color: var(--primary);
     padding: 1rem 2rem;
     font-weight: 600;
     border: none;
@@ -543,7 +543,7 @@
 
 .contact-info-item svg {
     flex-shrink: 0;
-    color: var(--primary-blue);
+    color: var(--primary);
     margin-top: 0.25rem;
 }
 
@@ -553,7 +553,7 @@
 }
 
 .contact-info-item a {
-    color: var(--primary-blue);
+    color: var(--primary);
     font-weight: 500;
 }
 
@@ -594,7 +594,7 @@
 .form-input:focus,
 .form-textarea:focus {
     outline: none;
-    border-color: var(--primary-blue);
+    border-color: var(--primary);
     box-shadow: 0 0 0 3px rgba(0,82,163,0.1);
 }
 
@@ -678,7 +678,7 @@
 }
 
 .btn-cta-mobile {
-    background: var(--primary-blue);
+    background: var(--primary);
     color: white;
 }
 
