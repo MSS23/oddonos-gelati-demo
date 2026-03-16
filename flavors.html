@@ -51,14 +51,47 @@
     </header>
 
     <!-- Hero Section -->
-    <section class="section bg-beige">
+    <section class="hero" id="hero" style="max-height: 500px; min-height: 400px;">
+        <img src="images/PXL_20251103_214658516.jpg" alt="Colorful gelato display" class="hero-bg">
+        <div class="hero-content">
+            <span class="hero-label">130+ Flavors</span>
+            <h1 class="hero-title">Our Gelato Menu</h1>
+            <p class="hero-subtitle">Crafted daily with premium natural ingredients. Each flavor tells a story of passion, tradition, and the finest ingredients from around the world.</p>
+        </div>
+    </section>
+
+    <!-- Flavor Finder Quiz -->
+    <section class="section" style="background: var(--warm-beige);">
         <div class="container">
             <div class="section-header">
-                <h1 class="section-title">Our Gelato Flavors</h1>
-                <p class="section-subtitle">
-                    Discover over 130 authentic Italian gelato flavors, crafted daily with premium natural ingredients.
-                    Each flavor tells a story of passion, tradition, and the finest ingredients from around the world.
-                </p>
+                <span class="section-label">Interactive</span>
+                <h2 class="section-title">Find Your Perfect Flavor</h2>
+                <p class="section-subtitle">Answer one question and we'll match you with your ideal gelato.</p>
+            </div>
+
+            <div id="flavorQuiz" class="flavor-quiz">
+                <div class="quiz-options">
+                    <button class="quiz-option" data-mood="classic" onclick="showFlavorResult(this)">
+                        <span class="quiz-emoji">🤎</span>
+                        <span class="quiz-label">Rich & Indulgent</span>
+                    </button>
+                    <button class="quiz-option" data-mood="fresh" onclick="showFlavorResult(this)">
+                        <span class="quiz-emoji">🍋</span>
+                        <span class="quiz-label">Light & Refreshing</span>
+                    </button>
+                    <button class="quiz-option" data-mood="nutty" onclick="showFlavorResult(this)">
+                        <span class="quiz-emoji">🌰</span>
+                        <span class="quiz-label">Nutty & Creamy</span>
+                    </button>
+                    <button class="quiz-option" data-mood="adventurous" onclick="showFlavorResult(this)">
+                        <span class="quiz-emoji">✨</span>
+                        <span class="quiz-label">Adventurous & Bold</span>
+                    </button>
+                </div>
+                <div id="quizResult" class="quiz-result" style="display: none;">
+                    <p class="quiz-result-text"></p>
+                    <button class="btn btn-outline" onclick="resetQuiz()" style="margin-top: 1rem;">Try Again</button>
+                </div>
             </div>
         </div>
     </section>
@@ -362,6 +395,7 @@
     <section class="section">
         <div class="container">
             <div class="section-header">
+                <span class="section-label">Limited Time</span>
                 <h2 class="section-title">Seasonal & Limited Edition</h2>
                 <p class="section-subtitle">
                     We regularly create special flavors using seasonal ingredients. Visit us or follow our social media
@@ -449,12 +483,30 @@
             </div>
 
             <div class="footer-bottom">
-                <p>&copy; 2024 Oddono's Gelati Italiani Ltd. All Rights Reserved.</p>
+                <p>&copy; 2025 Oddono's Gelati Italiani Ltd. All Rights Reserved.</p>
             </div>
         </div>
     </footer>
 
     <script src="script.js"></script>
+    <script>
+    function showFlavorResult(btn) {
+        const mood = btn.dataset.mood;
+        const results = {
+            classic: "You're a <strong>Dark Chocolate</strong> or <strong>Madagascar Vanilla</strong> lover! Rich, velvety, and timeless. Head to any Oddono's and ask for a taster.",
+            fresh: "Try our <strong>Mango Sorbet</strong> or <strong>Lemon Sorbet</strong>! Dairy-free, bursting with real fruit, and impossibly refreshing.",
+            nutty: "You need <strong>Pistachio di Bronte</strong> or <strong>Piedmont Hazelnut</strong> in your life. Award-winning, creamy perfection.",
+            adventurous: "Go for <strong>Basil Gelato</strong> or <strong>Chocolate & Cognac</strong>! Bold flavors you won't find anywhere else in London."
+        };
+        document.getElementById('quizResult').style.display = 'block';
+        document.querySelector('.quiz-result-text').innerHTML = results[mood];
+        document.querySelector('.quiz-options').style.display = 'none';
+    }
+    function resetQuiz() {
+        document.getElementById('quizResult').style.display = 'none';
+        document.querySelector('.quiz-options').style.display = 'grid';
+    }
+    </script>
 
     <!-- Vercel Analytics -->
     <script>
