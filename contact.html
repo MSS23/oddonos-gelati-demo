@@ -122,20 +122,23 @@
                 </p>
             </div>
 
-            <form class="contact-form" id="contact-form">
+            <form class="contact-form" id="contact-form" name="contact" method="POST" data-netlify="true" netlify-honeypot="bot-field">
+                <input type="hidden" name="form-name" value="contact">
+                <p class="hidden" style="display:none;"><label>Don't fill this out: <input name="bot-field"></label></p>
+
                 <div class="form-group">
                     <label for="name" class="form-label">Name *</label>
-                    <input type="text" id="name" class="form-input" required>
+                    <input type="text" id="name" name="name" class="form-input" required>
                 </div>
 
                 <div class="form-group">
                     <label for="email" class="form-label">Email Address *</label>
-                    <input type="email" id="email" class="form-input" required>
+                    <input type="email" id="email" name="email" class="form-input" required>
                 </div>
 
                 <div class="form-group">
                     <label for="subject" class="form-label">Subject *</label>
-                    <select id="subject" class="form-input" required>
+                    <select id="subject" name="subject" class="form-input" required>
                         <option value="">Select a subject...</option>
                         <option value="general">General Inquiry</option>
                         <option value="feedback">Feedback</option>
@@ -148,7 +151,7 @@
 
                 <div class="form-group">
                     <label for="message" class="form-label">Message *</label>
-                    <textarea id="message" class="form-textarea" placeholder="Tell us what you'd like to know..." required></textarea>
+                    <textarea id="message" name="message" class="form-textarea" placeholder="Tell us what you'd like to know..." required></textarea>
                 </div>
 
                 <button type="submit" class="btn btn-primary" style="width: 100%;">Send Message</button>
@@ -317,7 +320,7 @@
             </div>
 
             <div class="footer-bottom">
-                <p>&copy; 2025 Oddono's Gelati Italiani Ltd. All Rights Reserved.</p>
+                <p>&copy; 2026 Oddono's Gelati Italiani Ltd. All Rights Reserved.</p>
             </div>
         </div>
     </footer>

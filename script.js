@@ -348,34 +348,26 @@ const initContactForm = () => {
     };
 
     contactForm.addEventListener('submit', async (e) => {
-        e.preventDefault();
-
         const name = document.getElementById('name')?.value.trim();
         const email = document.getElementById('email')?.value.trim();
         const subject = document.getElementById('subject')?.value.trim();
         const message = document.getElementById('message')?.value.trim();
 
         if (!name || !email || !subject || !message) {
+            e.preventDefault();
             showMessage('Please fill in all required fields.', 'error');
             return;
         }
 
         if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
+            e.preventDefault();
             showMessage('Please enter a valid email address.', 'error');
             return;
         }
 
         const submitBtn = contactForm.querySelector('button[type="submit"]');
-        const originalText = submitBtn.textContent;
         submitBtn.textContent = 'Sending...';
         submitBtn.disabled = true;
-
-        setTimeout(() => {
-            showMessage(`Thank you, ${name}! We'll get back to you soon.`, 'success');
-            contactForm.reset();
-            submitBtn.textContent = originalText;
-            submitBtn.disabled = false;
-        }, 1000);
     });
 };
 

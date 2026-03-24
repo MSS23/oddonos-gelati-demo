@@ -2,7 +2,7 @@
   "name": "oddonos-gelato-website",
   "version": "1.0.0",
   "description": "A modern, responsive website for Oddono's Gelati Italiani - London's premier Italian gelato brand since 2004.",
-  "main": "backend-example.js",
+  "main": "index.html",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },

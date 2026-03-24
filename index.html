@@ -83,24 +83,8 @@
     }
     </script>
 
-    <!-- Open Graph / Social Media Meta Tags -->
-    <meta property="og:type" content="website">
-    <meta property="og:url" content="https://www.oddonos.com/">
-    <meta property="og:title" content="Oddono's Gelato - Fresh Natural Italian Gelato in London">
-    <meta property="og:description" content="Award-winning Italian gelato in London, made fresh daily with 100% natural ingredients since 2004.">
-    <meta property="og:image" content="https://www.oddonos.com/images/og-image.jpg">
-
-    <!-- Twitter Card Meta Tags -->
-    <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="Oddono's Gelato - Fresh Natural Italian Gelato in London">
-    <meta name="twitter:description" content="Award-winning Italian gelato in London, made fresh daily with 100% natural ingredients since 2004.">
-    <meta name="twitter:image" content="https://www.oddonos.com/images/twitter-image.jpg">
-
-    <!-- Additional SEO -->
+    <!-- Theme Color -->
     <meta name="theme-color" content="#0052A3">
-    <link rel="canonical" href="https://www.oddonos.com/">
-    <meta name="robots" content="index, follow">
-    <meta name="author" content="Oddono's Gelati Italiani Ltd">
 
     <!-- Preconnect for performance -->
     <link rel="dns-prefetch" href="https://fonts.googleapis.com">
@@ -191,40 +175,14 @@
     }
     </script>
 
-    <!-- Google Analytics (replace with your tracking ID) -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
+    <!-- Google Analytics - Configure with your tracking ID -->
+    <!-- <script async src="https://www.googletagmanager.com/gtag/js?id=G-YOUR_ID"></script>
     <script>
         window.dataLayer = window.dataLayer || [];
         function gtag(){dataLayer.push(arguments);}
         gtag('js', new Date());
-        gtag('config', 'G-XXXXXXXXXX');
-    </script>
-
-    <!-- Facebook Pixel (replace with your pixel ID) -->
-    <script>
-        !function(f,b,e,v,n,t,s)
-        {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
-        n.callMethod.apply(n,arguments):n.queue.push(arguments)};
-        if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
-        n.queue=[];t=b.createElement(e);t.async=!0;
-        t.src=v;s=b.getElementsByTagName(e)[0];
-        s.parentNode.insertBefore(t,s)}(window, document,'script',
-        'https://connect.facebook.net/en_US/fbevents.js');
-        fbq('init', 'YOUR_PIXEL_ID');
-        fbq('track', 'PageView');
-    </script>
-    <noscript><img height="1" width="1" style="display:none"
-        src="https://www.facebook.com/tr?id=YOUR_PIXEL_ID&ev=PageView&noscript=1"
-    /></noscript>
-
-    <!-- Google Analytics -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
-    <script>
-        window.dataLayer = window.dataLayer || [];
-        function gtag(){dataLayer.push(arguments);}
-        gtag('js', new Date());
-        gtag('config', 'G-XXXXXXXXXX');
-    </script>
+        gtag('config', 'G-YOUR_ID');
+    </script> -->
 
     <!-- Cookie Consent -->
     <script src="cookie-consent.js" defer></script>
@@ -641,6 +599,40 @@
         </div>
     </section>
 
+    <!-- Newsletter Signup -->
+    <section class="section bg-cream">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-label">Stay Connected</span>
+                <h2 class="section-title">Get the Latest from Oddono's</h2>
+                <p class="section-subtitle">
+                    Be the first to hear about new flavors, seasonal specials, and exclusive offers from our shops.
+                </p>
+            </div>
+
+            <form class="contact-form" name="newsletter" method="POST" data-netlify="true" netlify-honeypot="bot-field" style="max-width: 600px; margin: 0 auto;">
+                <input type="hidden" name="form-name" value="newsletter">
+                <p class="hidden" style="display:none;"><label>Don't fill this out: <input name="bot-field"></label></p>
+
+                <div class="form-group">
+                    <label for="newsletter-name" class="form-label">Your Name</label>
+                    <input type="text" id="newsletter-name" name="name" class="form-input" placeholder="Enter your name" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="newsletter-email" class="form-label">Email Address</label>
+                    <input type="email" id="newsletter-email" name="email" class="form-input" placeholder="Enter your email" required>
+                </div>
+
+                <button type="submit" class="btn btn-primary" style="width: 100%;">Subscribe</button>
+
+                <p style="text-align: center; margin-top: 1rem; color: var(--text-light); font-size: 0.875rem;">
+                    No spam, just gelato. Unsubscribe anytime.
+                </p>
+            </form>
+        </div>
+    </section>
+
     <!-- Instagram CTA -->
     <section class="instagram-cta">
         <div class="container">
@@ -709,7 +701,7 @@
             </div>
 
             <div class="footer-bottom">
-                <p>&copy; 2025 Oddono's Gelati Italiani Ltd. All Rights Reserved.</p>
+                <p>&copy; 2026 Oddono's Gelati Italiani Ltd. All Rights Reserved.</p>
             </div>
         </div>
     </footer>
@@ -723,17 +715,6 @@
         </a>
     </div>
 
-    <!-- Social Proof Notification -->
-    <div class="social-proof" id="socialProof" style="display: none;">
-        <button class="social-proof-close" onclick="document.getElementById('socialProof').style.display='none'" aria-label="Close notification">&times;</button>
-        <div class="social-proof-content">
-            <span class="social-proof-icon">🎉</span>
-            <div class="social-proof-text">
-                <strong>Sarah from Chelsea</strong>
-                just joined the Gelato Card program
-            </div>
-        </div>
-    </div>
 
     <!-- Cursor follower (desktop only) -->
     <div class="cursor-glow" id="cursorGlow"></div>
@@ -747,9 +728,5 @@
     </script>
     <script defer src="https://cdn.vercel-insights.com/v1/script.js"></script>
 
-    <!-- OPTIONAL: Live Social Proof with Real Data -->
-    <!-- Uncomment the line below AFTER setting up your backend API or Google Reviews -->
-    <!-- See QUICK-START-LIVE-DATA.md for instructions -->
-    <!-- <script src="social-proof-live.js"></script> -->
 </body>
 </html>
