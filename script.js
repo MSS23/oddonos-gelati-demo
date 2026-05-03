@@ -11,125 +11,15 @@
     const isTouch = matchMedia('(hover: none)').matches || 'ontouchstart' in window;
 
     /* ---------------------------------------------------------------------
-       1.  Smooth scroll  (lightweight Lenis-inspired)
+       1.  Native scroll only — CSS scroll-behavior: smooth handles anchors.
+           A JS scroll-hijack felt laggy in Chromium browsers, so it's gone.
        --------------------------------------------------------------------- */
-    function initSmoothScroll() {
-        if (prefersReducedMotion || isTouch) return;
-        let current = window.scrollY;
-        let target = window.scrollY;
-        const ease = 0.085;
-        let raf;
-
-        function tick() {
-            current += (target - current) * ease;
-            if (Math.abs(target - current) < 0.4) current = target;
-            window.scrollTo(0, current);
-            if (Math.abs(target - current) > 0.1) {
-                raf = requestAnimationFrame(tick);
-            } else {
-                raf = null;
-            }
-        }
-
-        function onWheel(e) {
-            // Don't intercept when modifier keys are pressed
-            if (e.ctrlKey || e.metaKey) return;
-            // Don't break form scrolling
-            const path = e.composedPath ? e.composedPath() : [];
-            for (const el of path) {
-                if (!el || !el.tagName) continue;
-                const tag = el.tagName.toLowerCase();
-                if (tag === 'textarea' || tag === 'select') return;
-            }
-            e.preventDefault();
-            target += e.deltaY;
-            target = Math.max(0, Math.min(target, document.documentElement.scrollHeight - window.innerHeight));
-            if (!raf) raf = requestAnimationFrame(tick);
-        }
-
-        window.addEventListener('wheel', onWheel, { passive: false });
-
-        // Anchor links — animate target update
-        document.querySelectorAll('a[href^="#"]').forEach((a) => {
-            a.addEventListener('click', (ev) => {
-                const id = a.getAttribute('href');
-                if (id.length < 2) return;
-                const el = document.querySelector(id);
-                if (!el) return;
-                ev.preventDefault();
-                const top = el.getBoundingClientRect().top + window.scrollY - 80;
-                target = top;
-                if (!raf) raf = requestAnimationFrame(tick);
-            });
-        });
-
-        // Keep target in sync when user uses keyboard / programmatic scroll
-        window.addEventListener('scroll', () => {
-            if (!raf) {
-                current = window.scrollY;
-                target = window.scrollY;
-            }
-        }, { passive: true });
-
-        window.addEventListener('resize', () => {
-            target = Math.min(target, document.documentElement.scrollHeight - window.innerHeight);
-        });
-    }
+    function initSmoothScroll() { /* intentionally empty */ }
 
     /* ---------------------------------------------------------------------
        2.  Custom cursor (dot + lagging ring, magnetic on interactive)
        --------------------------------------------------------------------- */
-    function initCursor() {
-        if (isTouch || prefersReducedMotion) return;
-        const dot = document.createElement('div');
-        const ring = document.createElement('div');
-        dot.className = 'cursor-dot';
-        ring.className = 'cursor-ring';
-        document.body.append(dot, ring);
-
-        let mx = window.innerWidth / 2, my = window.innerHeight / 2;
-        let dx = mx, dy = my, rx = mx, ry = my;
-        let raf;
-
-        function tick() {
-            dx += (mx - dx) * 0.55;
-            dy += (my - dy) * 0.55;
-            rx += (mx - rx) * 0.18;
-            ry += (my - ry) * 0.18;
-            dot.style.transform = `translate(${dx}px, ${dy}px) translate(-50%, -50%)`;
-            ring.style.transform = `translate(${rx}px, ${ry}px) translate(-50%, -50%)`;
-            raf = requestAnimationFrame(tick);
-        }
-
-        document.addEventListener('mousemove', (e) => {
-            mx = e.clientX;
-            my = e.clientY;
-            if (!raf) raf = requestAnimationFrame(tick);
-        });
-
-        document.addEventListener('mouseleave', () => {
-            dot.classList.add('hide');
-            ring.classList.add('hide');
-        });
-        document.addEventListener('mouseenter', () => {
-            dot.classList.remove('hide');
-            ring.classList.remove('hide');
-        });
-
-        const interactive = 'a, button, input, textarea, select, [data-cursor], .faq-question, .today__nav button, .today__dot';
-        document.addEventListener('mouseover', (e) => {
-            if (e.target && e.target.closest && e.target.closest(interactive)) {
-                ring.classList.add('is-hover');
-            }
-        });
-        document.addEventListener('mouseout', (e) => {
-            if (e.target && e.target.closest && e.target.closest(interactive)) {
-                ring.classList.remove('is-hover');
-            }
-        });
-
-        tick();
-    }
+    function initCursor() { /* removed — native cursor is faster + matches OS */ }
 
     /* ---------------------------------------------------------------------
        3.  Header scroll + scroll progress
@@ -141,18 +31,24 @@
         progress.className = 'scroll-progress';
         document.body.appendChild(progress);
 
-        let lastY = 0;
+        let ticking = false;
         function update() {
             const y = window.scrollY;
             header.classList.toggle('scrolled', y > 24);
             const max = document.documentElement.scrollHeight - window.innerHeight;
             const ratio = max > 0 ? Math.min(1, y / max) : 0;
             progress.style.transform = `scaleX(${ratio})`;
-            lastY = y;
+            ticking = false;
+        }
+        function onScroll() {
+            if (!ticking) {
+                requestAnimationFrame(update);
+                ticking = true;
+            }
         }
         update();
-        window.addEventListener('scroll', update, { passive: true });
-        window.addEventListener('resize', update);
+        window.addEventListener('scroll', onScroll, { passive: true });
+        window.addEventListener('resize', onScroll);
     }
 
     /* ---------------------------------------------------------------------
@@ -442,48 +338,10 @@
     }
 
     /* ---------------------------------------------------------------------
-      10.  Magnetic buttons (very subtle)
+      10.  Magnetic + parallax — removed; CSS hover transitions handle it.
        --------------------------------------------------------------------- */
-    function initMagnetic() {
-        if (isTouch || prefersReducedMotion) return;
-        document.querySelectorAll('.btn, .magnetic, .nav-cta').forEach((el) => {
-            el.classList.add('magnetic');
-            el.addEventListener('mousemove', (e) => {
-                const r = el.getBoundingClientRect();
-                const x = e.clientX - r.left - r.width / 2;
-                const y = e.clientY - r.top - r.height / 2;
-                el.style.transform = `translate(${x * 0.18}px, ${y * 0.22}px)`;
-            });
-            el.addEventListener('mouseleave', () => {
-                el.style.transform = '';
-            });
-        });
-    }
-
-    /* ---------------------------------------------------------------------
-      11.  Hero parallax (subtle)
-       --------------------------------------------------------------------- */
-    function initParallax() {
-        if (isTouch || prefersReducedMotion) return;
-        const visual = document.querySelector('.hero__visual img, .hero__visual .hero-bg');
-        if (!visual) return;
-        let ticking = false;
-
-        function update() {
-            const y = window.scrollY;
-            const scale = 1 + Math.min(y / 4000, 0.04);
-            const ty = Math.min(y * 0.12, 80);
-            visual.style.transform = `translateY(${ty}px) scale(${scale})`;
-            ticking = false;
-        }
-
-        window.addEventListener('scroll', () => {
-            if (!ticking) {
-                requestAnimationFrame(update);
-                ticking = true;
-            }
-        }, { passive: true });
-    }
+    function initMagnetic() { /* removed for performance */ }
+    function initParallax() { /* removed for performance */ }
 
     /* ---------------------------------------------------------------------
       12.  Marquee — duplicate items if needed for seamless loop

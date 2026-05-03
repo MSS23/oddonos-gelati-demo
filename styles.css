@@ -75,17 +75,7 @@ body {
     letter-spacing: -0.005em;
 }
 
-/* Subtle paper grain — never dominates */
-body::before {
-    content: '';
-    position: fixed;
-    inset: 0;
-    pointer-events: none;
-    z-index: 9998;
-    opacity: 0.04;
-    mix-blend-mode: multiply;
-    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
-}
+/* Paper grain removed — full-screen fixed overlay was forcing repaints. */
 
 img { max-width: 100%; height: auto; display: block; }
 a { text-decoration: none; color: inherit; }
@@ -197,14 +187,12 @@ p { color: var(--ink-soft); line-height: 1.65; }
     left: 0;
     right: 0;
     z-index: 100;
-    background: rgba(245, 240, 230, 0.72);
-    backdrop-filter: blur(18px) saturate(160%);
-    -webkit-backdrop-filter: blur(18px) saturate(160%);
+    background: rgba(245, 240, 230, 0.96);
     border-bottom: 1px solid transparent;
     transition: background var(--t), border-color var(--t), padding var(--t);
 }
 .header.scrolled {
-    background: rgba(245, 240, 230, 0.92);
+    background: var(--cream);
     border-bottom-color: var(--line);
 }
 
@@ -405,10 +393,9 @@ p { color: var(--ink-soft); line-height: 1.65; }
 .btn-pistachio:hover { background: var(--ink); border-color: var(--ink); }
 
 .btn-secondary {
-    background: transparent;
+    background: rgba(245, 240, 230, 0.12);
     color: var(--cream);
     border-color: rgba(245, 240, 230, 0.4);
-    backdrop-filter: blur(8px);
 }
 .btn-secondary:hover { background: var(--cream); color: var(--ink); border-color: var(--cream); }
 
@@ -618,8 +605,7 @@ p { color: var(--ink-soft); line-height: 1.65; }
     font-size: 0.7rem;
     letter-spacing: 0.16em;
     text-transform: uppercase;
-    background: rgba(31,36,25,0.55);
-    backdrop-filter: blur(10px);
+    background: rgba(31,36,25,0.78);
     padding: 0.45rem 0.85rem;
     border-radius: var(--r-pill);
     border: 1px solid rgba(245,240,230,0.18);
@@ -2197,43 +2183,8 @@ p { color: var(--ink-soft); line-height: 1.65; }
     .fab-button::before { display: none; }
 }
 
-/* ---------- Cursor ---------- */
-.cursor-dot,
-.cursor-ring {
-    position: fixed;
-    top: 0;
-    left: 0;
-    pointer-events: none;
-    z-index: 10001;
-    transform: translate(-50%, -50%);
-    will-change: transform;
-}
-.cursor-dot {
-    width: 6px;
-    height: 6px;
-    border-radius: 50%;
-    background: var(--ink);
-    transition: opacity 0.2s ease, transform 0.15s ease;
-}
-.cursor-ring {
-    width: 36px;
-    height: 36px;
-    border-radius: 50%;
-    border: 1px solid var(--ink);
-    transition: width 0.3s var(--ease-out), height 0.3s var(--ease-out), background 0.3s var(--ease-out), opacity 0.2s ease;
-    mix-blend-mode: difference;
-    background: transparent;
-}
-.cursor-ring.is-hover {
-    width: 64px;
-    height: 64px;
-    background: rgba(245,240,230,0.15);
-    border-color: var(--cream);
-}
-.cursor-dot.hide, .cursor-ring.hide { opacity: 0; }
-@media (hover: none), (max-width: 960px) {
-    .cursor-dot, .cursor-ring { display: none; }
-}
+/* Custom cursor removed — native cursor for performance */
+.cursor-dot, .cursor-ring { display: none !important; }
 
 /* Legacy compat — drop these */
 .cursor-glow { display: none; }
