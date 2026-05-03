@@ -366,31 +366,40 @@
         }
 
         // Initialise first state
+        let current = -1;
         activate(0);
+        current = 0;
 
-        if (!('IntersectionObserver' in window)) {
-            steps.forEach(s => s.classList.add('is-active'));
-            years.forEach(y => y.classList.add('is-active'));
-            return;
+        // Scroll-driven activation:
+        // pick the LAST step whose top has crossed the anchor line (45% from
+        // the top of the viewport). This gives a single, deterministic
+        // current step — no ratio-based ambiguity, no skipping.
+        let ticking = false;
+        function update() {
+            ticking = false;
+            const anchor = window.innerHeight * 0.45;
+            let idx = 0;
+            for (let i = 0; i < steps.length; i++) {
+                const top = steps[i].getBoundingClientRect().top;
+                if (top <= anchor) idx = i;
+                else break;
+            }
+            if (idx !== current) {
+                current = idx;
+                activate(idx);
+            }
         }
-
-        const io = new IntersectionObserver((entries) => {
-            // pick the most-visible step closest to viewport center
-            let bestIdx = -1;
-            let bestRatio = 0;
-            entries.forEach((entry) => {
-                if (entry.intersectionRatio > bestRatio) {
-                    bestRatio = entry.intersectionRatio;
-                    bestIdx = steps.indexOf(entry.target);
-                }
-            });
-            if (bestIdx >= 0) activate(bestIdx);
-        }, {
-            threshold: [0.25, 0.5, 0.75, 1.0],
-            rootMargin: '-30% 0px -30% 0px'
-        });
-
-        steps.forEach(s => io.observe(s));
+        function onScroll() {
+            if (!ticking) {
+                requestAnimationFrame(update);
+                ticking = true;
+            }
+        }
+        window.addEventListener('scroll', onScroll, { passive: true });
+        window.addEventListener('resize', onScroll);
+        // Run once after layout settles (fonts, images)
+        setTimeout(update, 200);
+        setTimeout(update, 800);
     }
 
     /* ---------------------------------------------------------------------
