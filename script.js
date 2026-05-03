@@ -344,6 +344,56 @@
     function initParallax() { /* removed for performance */ }
 
     /* ---------------------------------------------------------------------
+      11.  Journey — scroll-driven year tracker
+       --------------------------------------------------------------------- */
+    function initJourney() {
+        const root = document.querySelector('[data-journey]');
+        if (!root) return;
+        const years = Array.from(root.querySelectorAll('.journey__year'));
+        const steps = Array.from(root.querySelectorAll('.journey__step'));
+        const fill = root.querySelector('[data-journey-fill]');
+        const count = root.querySelector('[data-journey-count]');
+        if (!years.length || !steps.length) return;
+
+        function activate(idx) {
+            years.forEach((y, k) => {
+                y.classList.toggle('is-active', k === idx);
+                y.classList.toggle('is-past', k < idx);
+            });
+            steps.forEach((s, k) => s.classList.toggle('is-active', k === idx));
+            if (fill) fill.style.width = `${((idx + 1) / steps.length) * 100}%`;
+            if (count) count.textContent = `${String(idx + 1).padStart(2, '0')} / ${String(steps.length).padStart(2, '0')}`;
+        }
+
+        // Initialise first state
+        activate(0);
+
+        if (!('IntersectionObserver' in window)) {
+            steps.forEach(s => s.classList.add('is-active'));
+            years.forEach(y => y.classList.add('is-active'));
+            return;
+        }
+
+        const io = new IntersectionObserver((entries) => {
+            // pick the most-visible step closest to viewport center
+            let bestIdx = -1;
+            let bestRatio = 0;
+            entries.forEach((entry) => {
+                if (entry.intersectionRatio > bestRatio) {
+                    bestRatio = entry.intersectionRatio;
+                    bestIdx = steps.indexOf(entry.target);
+                }
+            });
+            if (bestIdx >= 0) activate(bestIdx);
+        }, {
+            threshold: [0.25, 0.5, 0.75, 1.0],
+            rootMargin: '-30% 0px -30% 0px'
+        });
+
+        steps.forEach(s => io.observe(s));
+    }
+
+    /* ---------------------------------------------------------------------
       12.  Marquee — duplicate items if needed for seamless loop
        --------------------------------------------------------------------- */
     function initMarquee() {
@@ -359,7 +409,9 @@
       13.  Year stamp
        --------------------------------------------------------------------- */
     function initYear() {
-        document.querySelectorAll('[data-year]').forEach((el) => {
+        // Footer copyright year only — scoped to the footer to avoid clobbering
+        // the journey's data-year markers ("2004", "2005", etc.).
+        document.querySelectorAll('.footer [data-year]').forEach((el) => {
             el.textContent = new Date().getFullYear();
         });
     }
@@ -380,6 +432,7 @@
         initFAQ();
         initStats();
         initToday();
+        initJourney();
         initMagnetic();
         initParallax();
         initMarquee();

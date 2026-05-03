@@ -1816,6 +1816,154 @@ p { color: var(--ink-soft); line-height: 1.65; }
 }
 .contact-details p { margin: 0; color: var(--ink); }
 
+/* ---------- Journey — scroll-driven stepped story ---------- */
+.journey { background: var(--cream-warm); border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); }
+.journey__stage {
+    display: grid;
+    grid-template-columns: 0.85fr 1.5fr;
+    gap: clamp(2rem, 6vw, 6rem);
+    margin-top: clamp(2rem, 4vw, 3rem);
+    align-items: start;
+}
+.journey__sticky {
+    position: sticky;
+    top: 8rem;
+    align-self: start;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    padding-bottom: 4rem;
+}
+.journey__year-track {
+    position: relative;
+    height: clamp(7rem, 16vw, 12rem);
+    overflow: hidden;
+    line-height: 1;
+}
+.journey__year {
+    display: block;
+    font-family: var(--font-display);
+    font-size: clamp(5rem, 13vw, 11rem);
+    font-weight: 400;
+    line-height: 1;
+    letter-spacing: -0.05em;
+    color: var(--ink);
+    font-variation-settings: "opsz" 144, "SOFT" 50;
+    transition: transform 0.7s var(--ease-out-strong), opacity 0.5s var(--ease-out);
+    opacity: 0;
+    transform: translateY(110%);
+}
+.journey__year[data-year="Today"] {
+    font-style: italic;
+    color: var(--pistachio-deep);
+    font-variation-settings: "opsz" 144, "SOFT" 100, "slnt" -10;
+}
+.journey__year.is-active {
+    opacity: 1;
+    transform: translateY(0);
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+.journey__year.is-past {
+    opacity: 0;
+    transform: translateY(-110%);
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+.journey__progress {
+    height: 2px;
+    background: var(--line-strong);
+    overflow: hidden;
+    border-radius: 2px;
+}
+.journey__progress-fill {
+    display: block;
+    height: 100%;
+    width: 0;
+    background: var(--pistachio-deep);
+    transition: width 0.4s var(--ease-out);
+}
+.journey__count {
+    font-family: var(--font-mono);
+    font-size: 0.72rem;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--ink-mute);
+}
+
+.journey__steps {
+    display: flex;
+    flex-direction: column;
+    gap: clamp(4rem, 10vw, 9rem);
+    list-style: none;
+    padding: 0;
+}
+.journey__step {
+    display: grid;
+    gap: 1rem;
+    position: relative;
+    padding-left: 0;
+    opacity: 0.32;
+    transform: translateY(20px);
+    transition: opacity 0.7s var(--ease-out), transform 0.7s var(--ease-out);
+    will-change: opacity, transform;
+}
+.journey__step.is-active {
+    opacity: 1;
+    transform: translateY(0);
+}
+.journey__step-num {
+    font-family: var(--font-mono);
+    font-size: 0.72rem;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--pistachio-deep);
+    font-weight: 600;
+}
+.journey__step-year {
+    display: none;
+}
+.journey__step-title {
+    font-family: var(--font-display);
+    font-size: clamp(1.75rem, 3.2vw, 2.6rem);
+    line-height: 1.05;
+    letter-spacing: -0.03em;
+    color: var(--ink);
+    font-variation-settings: "opsz" 144, "SOFT" 70;
+    margin: 0;
+}
+.journey__step-title em {
+    color: var(--pistachio-deep);
+    font-style: italic;
+    font-variation-settings: "opsz" 144, "SOFT" 100, "slnt" -10;
+}
+.journey__step p {
+    color: var(--ink-soft);
+    line-height: 1.65;
+    font-size: clamp(1rem, 1.2vw, 1.08rem);
+    max-width: 56ch;
+}
+
+@media (max-width: 880px) {
+    .journey__stage { grid-template-columns: 1fr; gap: 1rem; }
+    .journey__sticky {
+        position: relative;
+        top: auto;
+        flex-direction: row;
+        align-items: center;
+        gap: 1rem;
+        padding-bottom: 1rem;
+        margin-bottom: 1rem;
+    }
+    .journey__year-track { height: clamp(3rem, 14vw, 4.5rem); flex: 1; }
+    .journey__year { font-size: clamp(3rem, 13vw, 4.2rem); }
+    .journey__progress { flex: 0 0 80px; }
+    .journey__steps { gap: 3rem; }
+    .journey__step { opacity: 1; transform: none; }
+}
+
 /* ---------- Timeline ---------- */
 .timeline {
     max-width: 800px;

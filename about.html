@@ -97,77 +97,66 @@
         </div>
     </section>
 
-    <!-- Timeline Section -->
-    <section class="section bg-cream">
+    <!-- Journey — scroll-driven stepped timeline -->
+    <section class="section journey" data-journey>
         <div class="container">
             <div class="section-header">
-                <span class="section-label">Timeline</span>
-                <h2 class="section-title">Our Journey</h2>
+                <div>
+                    <span class="section-label"><span class="num">02</span> · The journey</span>
+                    <h2 class="section-title">From <em>one shop</em> to seven.</h2>
+                </div>
+                <p class="section-subtitle">Scroll. The year on the left moves with you.</p>
             </div>
 
-            <div class="timeline">
-                <!-- 2004 -->
-                <div class="timeline-item">
-                    <div class="timeline-content">
-                        <span class="timeline-year">2004</span>
-                        <h3 class="timeline-title">The Founder's Inspiration</h3>
-                        <p class="timeline-description">
-                            Christian Oddono, missing the taste of his childhood spent at his first Oddono's Gelato
-                            Italiano in South Kensington, bringing authentic gelato to London. Born from his grandmother's
-                            secret recipes and a mission to offer fresh, natural Italian gelato in London.
-                        </p>
+            <div class="journey__stage">
+                <aside class="journey__sticky">
+                    <div class="journey__year-track">
+                        <span class="journey__year" data-year="2004">2004</span>
+                        <span class="journey__year" data-year="2005">2005</span>
+                        <span class="journey__year" data-year="2008">2008</span>
+                        <span class="journey__year" data-year="2012">2012</span>
+                        <span class="journey__year" data-year="Today">Today</span>
                     </div>
-                </div>
+                    <div class="journey__progress"><span class="journey__progress-fill" data-journey-fill></span></div>
+                    <span class="journey__count" data-journey-count>01 / 05</span>
+                </aside>
 
-                <!-- 2005 -->
-                <div class="timeline-item">
-                    <div class="timeline-content">
-                        <span class="timeline-year">2005</span>
-                        <h3 class="timeline-title">Commitment to Ingredients</h3>
-                        <p class="timeline-description">
-                            We established our core principle: to use only the finest natural ingredients, sourced directly
-                            from their point of origin. From vanilla pods from Madagascar to pistachios from Sicily, creating
-                            unparalleled quality.
-                        </p>
-                    </div>
-                </div>
+                <ol class="journey__steps">
+                    <li class="journey__step" data-step="2004">
+                        <span class="journey__step-num">01</span>
+                        <span class="journey__step-year">2004</span>
+                        <h3 class="journey__step-title">A single shop on <em>Bute Street.</em></h3>
+                        <p>Christian Oddono opens Oddono's at 14 Bute Street, South Kensington in July 2004 with partners Marco Petracchini, Mirko Scolari and Federico Peruzzi. The mission: fresh, natural Italian gelato in London. The recipes come from Christian's grandmother.</p>
+                    </li>
 
-                <!-- 2008 -->
-                <div class="timeline-item">
-                    <div class="timeline-content">
-                        <span class="timeline-year">2008</span>
-                        <h3 class="timeline-title">The Artisanal Process</h3>
-                        <p class="timeline-description">
-                            Perfecting our craft, we standardized our in-house, truly artisanal production process,
-                            guaranteeing freshness and flavor in every scoop.
-                        </p>
-                    </div>
-                </div>
+                    <li class="journey__step" data-step="2005">
+                        <span class="journey__step-num">02</span>
+                        <span class="journey__step-year">2005</span>
+                        <h3 class="journey__step-title">Sourced <em>by name.</em></h3>
+                        <p>Pistachios from Bronte. Vanilla pods from Madagascar. Hazelnuts from Piedmont. Milk from British dairies. We commit, in writing, to never use colourings, preservatives, or modified ingredients — and we still don't.</p>
+                    </li>
 
-                <!-- 2012 -->
-                <div class="timeline-item">
-                    <div class="timeline-content">
-                        <span class="timeline-year">2012</span>
-                        <h3 class="timeline-title">Our Growth</h3>
-                        <p class="timeline-description">
-                            With a growing family of loyal customers, Oddono's expands across London, sharing the passion
-                            for true Italian gelato with new neighborhoods.
-                        </p>
-                    </div>
-                </div>
+                    <li class="journey__step" data-step="2008">
+                        <span class="journey__step-num">03</span>
+                        <span class="journey__step-year">2008</span>
+                        <h3 class="journey__step-title">Three gold stars, <em>Nocciola.</em></h3>
+                        <p>Great Taste Awards 2008: three gold stars for our Nocciola del Piemonte, plus Best Speciality from the South East. The artisan production process — every flavour churned in-house, every batch made fresh — is now the standard.</p>
+                    </li>
 
-                <!-- Today -->
-                <div class="timeline-item">
-                    <div class="timeline-content">
-                        <span class="timeline-year">Today</span>
-                        <h3 class="timeline-title">7 Locations & Growing</h3>
-                        <p class="timeline-description">
-                            Now with 7 shops across London and wholesale partnerships throughout the UK, we continue to
-                            craft over 130 unique flavors, staying true to our founding principles while innovating
-                            for the future.
-                        </p>
-                    </div>
-                </div>
+                    <li class="journey__step" data-step="2012">
+                        <span class="journey__step-num">04</span>
+                        <span class="journey__step-year">2012</span>
+                        <h3 class="journey__step-title">More neighbourhoods, <em>same laboratorio.</em></h3>
+                        <p>Battersea, Hampstead, East Dulwich, Chiswick, Stoke Newington, Wimbledon. Every shop opens with the same rule — gelato is delivered fresh from the Bute Street laboratorio every single morning.</p>
+                    </li>
+
+                    <li class="journey__step" data-step="Today">
+                        <span class="journey__step-num">05</span>
+                        <span class="journey__step-year">Today</span>
+                        <h3 class="journey__step-title">Seven shops. <em>One recipe book.</em></h3>
+                        <p>Over 130 flavours rotated, two Great Taste gold stars on Pistacchio di Bronte, wholesale partnerships across the UK, and the same hand-churn we started with. Christian still tests every flavour. Some things shouldn't scale.</p>
+                    </li>
+                </ol>
             </div>
         </div>
     </section>
